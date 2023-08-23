@@ -1,0 +1,30 @@
+.root__ball {
+  width: 50px;
+  height: 50px;
+  background: #fe4040;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.root__ball_text {
+  width: 200px;
+  height: 50px;
+  background: #fe4040;
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  div:nth-child(1) {
+    width: 50px;
+  }
+  div:nth-child(2) {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    color: #fff;
+    width: calc(100% - 50px);
+    display: flex;
+    justify-content: flex-start;
+  }
+}

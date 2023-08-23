@@ -1,0 +1,22 @@
+@import '@Scss/colors';
+@mixin mixFontStyles {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+}
+.root_info {
+  &__header {
+    @include mixFontStyles();
+    color: #000;
+    margin: 10px 0px;
+  }
+  &__info {
+    @include mixFontStyles();
+    color: $appDarkGrey;
+    margin: 10px 0px;
+  }
+  &__action {
+    @include mixFontStyles();
+    margin: 10px 0px;
+  }
+}

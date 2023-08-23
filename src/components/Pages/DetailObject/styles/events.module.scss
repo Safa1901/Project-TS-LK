@@ -1,0 +1,66 @@
+.root {
+  &__filter {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__btns {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      div {
+        max-width: 140px;
+        min-width: 140px;
+        margin-right: 13px;
+      }
+    }
+    &__dropdowns {
+      display: flex;
+      align-items: center;
+      &__label {
+        padding: 0px 10px;
+      }
+    }
+  }
+  &__filter__checkboxes {
+    margin-top: 20px;
+    &__header {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    &__wrapper {
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &__component {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        div:nth-child(2) {
+          width: calc(100% - 24px);
+          padding-left: 30px;
+        }
+      }
+    }
+  }
+  &__data_table {
+    margin-top: 45px;
+  }
+  &__download_more_events {
+    margin-top: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__btn {
+      width: 180px;
+    }
+  }
+  &__active_events {
+    margin-top: 30px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+  }
+}

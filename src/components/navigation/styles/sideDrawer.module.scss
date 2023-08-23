@@ -1,0 +1,72 @@
+@import '@Scss/colors';
+.root {
+  .menuListWrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 69px;
+    .listWrapper {
+      width: 50%;
+      .listHeader {
+        font-weight: normal;
+        font-size: 12px;
+        color: #495057;
+        display: flex;
+        align-items: center;
+        padding: 0px;
+        background: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        &__rotate {
+          transform: rotate(180deg);
+        }
+      }
+      .list {
+        list-style: none;
+        padding: 0px;
+        padding-right: 10px;
+        .listItem {
+          width: 100%;
+          cursor: pointer;
+          font-weight: normal;
+          font-size: 14px;
+          margin: 15px 0px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background: transparent;
+          border: none;
+          outline: none;
+          padding: 0px;
+          div {
+            display: flex;
+            align-items: center;
+          }
+          .listItemRootText {
+            width: 100%;
+            text-align: left;
+            padding-left: 10px;
+          }
+          .listItemRootTextAdmin {
+            width: 100%;
+            text-align: left;
+          }
+          .listItemRootIcon {
+          }
+        }
+
+        .listItemActive {
+          color: $appBlue;
+          svg {
+            path {
+              fill: $appBlue;
+            }
+          }
+        }
+        .listItemTextActive {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

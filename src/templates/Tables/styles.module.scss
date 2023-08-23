@@ -1,0 +1,71 @@
+/* Tables
+================================== */
+.Rtable {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+.Rtable_cell {
+  min-height: 40px;
+  box-sizing: border-box;
+  flex-grow: 1;
+  width: 100%; // Default to full width
+  padding: 0.8em 1.2em;
+  overflow: hidden; // Or flex might break
+  list-style: none;
+  background: fade(slategrey, 20%);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  a {
+    text-decoration: none;
+  }
+  white-space: nowrap; /* Запрещаем перенос строк */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.Rtable_cell_header {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+}
+/* Table column sizing
+    ================================== */
+.Rtable__2cols > .Rtable_cell {
+  flex: 0 0 50%;
+}
+.Rtable__3cols > .Rtable_cell {
+  flex: 0 0 33.33%;
+}
+.Rtable__4cols > .Rtable_cell {
+  flex: 0 0 25%;
+}
+.Rtable__4cols__header {
+  border-bottom: 2px solid #f8f9fa;
+}
+.Rtable__5cols > .Rtable_cell {
+  flex: 0 0 20%;
+}
+.Rtable__6cols > .Rtable_cell {
+  flex: 0 0 16.6%;
+}
+/*  */
+.Rtable__4cols,
+.Rtable__5cols {
+  cursor: pointer;
+}
+.selected {
+  background: #f8f9fa;
+}
+.Rtable_cell_flex_box {
+  width: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Rtable_cell_actions {
+  width: 55px;
+  display: flex;
+  justify-content: space-between;
+}

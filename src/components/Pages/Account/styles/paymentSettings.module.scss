@@ -1,0 +1,39 @@
+.root {
+  margin-top: 35px;
+  &__auto_payment {
+    &__switch {
+      margin-top: 35px;
+      width: 50%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &__input {
+      }
+      &__label {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+      }
+    }
+  }
+  &__payment_methods {
+    margin-top: 35px;
+  }
+  &__add_payment_method {
+    margin-top: 25px;
+    max-width: 200px;
+  }
+}
+.header {
+  &__main {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  &__info {
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+  }
+}

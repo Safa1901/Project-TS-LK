@@ -1,0 +1,38 @@
+@import '@Scss/colors';
+.root {
+  min-width: 380px;
+  width: calc(100% - 120px);
+  margin-top: 25px;
+  &__form {
+    &__text_fields {
+      margin-top: 30px;
+    }
+    &__check_boxes {
+      margin-top: 30px;
+      &__header {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+      }
+      &__wrapper {
+        margin: 25px 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__input {
+          width: 24px;
+        }
+        &__info {
+          width: calc(100% - 24px);
+          display: flex;
+          align-items: center;
+          &__item {
+            display: flex;
+            align-items: center;
+            margin: 0px 22px;
+          }
+        }
+      }
+    }
+  }
+}

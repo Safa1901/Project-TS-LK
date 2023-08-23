@@ -1,0 +1,146 @@
+@import '@Scss/colors';
+@mixin mixBaseButton {
+  width: 100%;
+  height: 40px;
+  border: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  &:disabled {
+    background: #a0a6ab;
+  }
+}
+@mixin mixBaseButtonRadius {
+  width: 100%;
+  height: 30px;
+  border: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  color: #fff;
+  cursor: pointer;
+  &:disabled {
+    background: #a0a6ab;
+  }
+}
+@mixin mixButtonWithoutText {
+  width: 20px;
+  height: 20px;
+  border: none;
+  padding: 0px !important;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.blue {
+  background: $appBlue;
+  @include mixBaseButton();
+}
+.delete_btn {
+  @include mixButtonWithoutText();
+}
+.edit_pencil_btn {
+  @include mixButtonWithoutText();
+}
+.before_btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 75px;
+  height: 20px;
+  border: none;
+  padding: 0px !important;
+  background-color: #fff;
+  cursor: pointer;
+  outline: none;
+  color: #000;
+  &__icon {
+    display: flex;
+    align-items: center;
+  }
+  div {
+    text-decoration: none !important;
+  }
+}
+.link_btn {
+  border: none;
+  background-color: #fff;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  color: $appBlue;
+  text-decoration: underline;
+  padding: 0px !important;
+  cursor: pointer;
+}
+/* --- toggle active button filter styles */
+.active {
+  background: $appBlue;
+  @include mixBaseButton();
+}
+.nonactive {
+  width: 100%;
+  height: 40px;
+  border: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  color: #6c757d;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.filter_icon_btn {
+  padding: 0px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border: none;
+  background-color: #fff;
+}
+.menu_icon_btn {
+  padding: 0px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  border: none;
+  background-color: #fff;
+  outline: none;
+}
+.menu_icon_btn_active {
+  border-radius: 50%;
+  background-color: #f8f9fa;
+}
+.border_radius_btn {
+  background: $appBlue;
+  outline: none;
+  @include mixBaseButtonRadius();
+}
+.active_svg_icon_edit_pencil_btn {
+  svg {
+    path {
+      fill: $appBlue;
+    }
+  }
+}
+.active_svg_icon_delete_btn {
+  svg {
+    path {
+      fill: $appDarkGrey;
+    }
+  }
+}

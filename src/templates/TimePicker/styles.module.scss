@@ -1,0 +1,31 @@
+.root {
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+  input {
+    outline: none !important;
+    ::-webkit-outer-spin-button,
+    ::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    -moz-appearance: textfield;
+  }
+}
+.focus_border {
+  border: 1px solid #003e8c;
+}
+.default_border {
+  border: 1px solid #ced4da;
+}
+.height40 {
+  height: 40px;
+}
+.height25 {
+  height: 25px;
+}
+.disabled {
+  border: 1px solid #ced4da;
+  color: #ced4da;
+  background-color: #fff !important;
+}

@@ -1,0 +1,103 @@
+@import '@Scss/colors';
+.root {
+  margin-top: 35px;
+  &__info {
+    padding: 21px 23px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    &__text {
+      div {
+        margin: 10px 0px;
+        span:nth-child(1) {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 15px;
+        }
+      }
+    }
+    &__actions {
+      &__balance {
+        margin: 10px 0px;
+        span:nth-child(2) {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 15px;
+        }
+      }
+      &__replenish_balance {
+        display: flex;
+        justify-content: flex-end;
+        button {
+          width: 90px !important;
+        }
+      }
+    }
+  }
+  &__actions {
+    margin-top: 45px;
+    width: 380px;
+    display: flex;
+    justify-content: space-between;
+    div {
+      width: 180px;
+    }
+  }
+  &__hr {
+    margin-top: 25px;
+    background: #f8f9fa;
+    height: 3px;
+  }
+  &__connected_services {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    &__wrapper {
+      width: 66.66%;
+      &__header {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+      }
+      &__info {
+        margin-top: 35px;
+        &__div {
+          margin: 10px 0px;
+          display: flex;
+          justify-content: space-between;
+          white-space: nowrap;
+          &__dotted {
+            width: 100%;
+            border-bottom: 1px solid $appDarkGrey;
+            border-bottom-style: dotted;
+          }
+        }
+        &__total {
+          display: flex;
+          justify-content: space-between;
+          div {
+            white-space: nowrap;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    &__icons {
+      width: 33.33%;
+      &__div {
+        display: flex;
+        justify-content: flex-end;
+        margin: 10px 0px;
+      }
+    }
+  }
+  &__report_a_problem {
+    margin-top: 55px;
+    a {
+      color: #003e8c;
+    }
+  }
+}

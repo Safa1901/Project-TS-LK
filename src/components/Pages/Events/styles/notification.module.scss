@@ -1,0 +1,30 @@
+.root {
+  &__header {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    margin: 35px 0px;
+  }
+  &__before_link {
+    a {
+      text-decoration: none;
+    }
+  }
+  &__notification {
+    margin-top: 35px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    &__date {
+      color: #777777;
+    }
+    &__header {
+      color: #000;
+      margin: 10px 0px;
+    }
+    &__message {
+      color: #000;
+      margin: 10px 0px;
+    }
+  }
+}

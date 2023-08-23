@@ -1,0 +1,67 @@
+@import 'colors';
+$drawerWidth: 310px;
+.root {
+  margin-top: 100px;
+  display: flex;
+  min-height: 100%;
+  .appBar {
+    width: calc(100% - 310px);
+    margin-left: $drawerWidth;
+    height: 100px;
+    background-color: #fff;
+    box-shadow: none;
+  }
+  .drawer {
+    width: $drawerWidth;
+    flex-shrink: 0;
+  }
+  .drawerPaper {
+    width: $drawerWidth;
+    background-color: #f8f9fa;
+  }
+  .toolbar {
+    height: 100px;
+    &__logo {
+      margin: 20px 20px 0px 0px;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  .main {
+    flex-grow: 1;
+    background-color: #fff;
+    padding-left: 20px;
+    padding-right: 130px;
+    display: flex;
+    flex-direction: column;
+    &__content {
+      flex: 1 0 auto;
+    }
+    &__footer {
+      flex: 0 0 auto;
+      background: #fff;
+      height: 120px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &__copyright {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        color: #777777;
+        &__icons {
+          display: flex;
+          justify-content: space-between;
+          font-size: 17px;
+          div {
+            margin: 0px 5px;
+            a {
+              text-decoration: none;
+              color: #000;
+            }
+          }
+        }
+      }
+    }
+  }
+}

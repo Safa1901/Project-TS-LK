@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'Segoe' !important;
+  src: url('./files/Segoe.ttf') format('opentype');
+}
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  font-family: Segoe, Arial, sans-serif !important;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: calc(100% - 100px);
+}
+#root {
+  background-color: #fff;
+  height: 100%;
+}
+.react-time-picker__wrapper {
+  border: none !important;
+}
+/*for FireFox*/
+input[type='submit']::-moz-focus-inner,
+input[type='button']::-moz-focus-inner {
+  border: 0;
+}
+/*for IE8 and below */
+button:focus {
+  outline: none !important;
+}
+select:focus {
+  outline: none !important;
+}
+input:focus {
+  outline: none !important;
+}
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+select {
+  background: transparent;
+}

@@ -1,0 +1,49 @@
+@import '@Scss/colors';
+@mixin mixCardNumber {
+  width: calc(100% - 45px);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  padding: 0px 9px;
+}
+.root_card {
+  max-width: 300px;
+  &__master,
+  &__visa {
+    margin: 23px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__number {
+      @include mixCardNumber();
+    }
+    &__icon {
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__personal_account {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__data {
+      width: calc(100% - 10px);
+      &__name {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 15px;
+        color: #000;
+      }
+      &__info {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        color: $appDarkGrey;
+      }
+    }
+    &__icon {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

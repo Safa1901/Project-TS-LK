@@ -1,0 +1,16 @@
+@import 'colors';
+.root {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: $appRed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none !important;
+  span {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none !important;
+  }
+}

@@ -1,0 +1,8 @@
+@import 'mixins';
+.root {
+  margin-top: 10px;
+  @include mixFormWrapper();
+  &__last_seen {
+    @include mixLastSeen();
+  }
+}

@@ -1,0 +1,132 @@
+@import '@Scss/colors';
+@mixin mixHeader {
+  margin-top: 25px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+}
+.root {
+  &__header {
+    @include mixHeader();
+  }
+  &__text_fields {
+    width: 380px;
+    &__save_btn {
+      margin-top: 27px;
+      div {
+        width: 180px;
+      }
+    }
+  }
+  &__hr {
+    margin-top: 35px;
+    height: 3px;
+    background: #f8f9fa;
+  }
+  &__table_data {
+    &__header {
+      @include mixHeader();
+    }
+  }
+  &__keys {
+    &__header {
+      @include mixHeader();
+    }
+    &__value {
+      div:nth-child(1) {
+        margin: 10px 0px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+      }
+      div:nth-child(2) {
+        margin: 10px 0px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        color: $appDarkGrey;
+      }
+    }
+  }
+  &__timetable {
+    &__header {
+      @include mixHeader();
+    }
+    &__switch_auto_timetable {
+      margin-top: 25px;
+      width: 290px;
+      display: flex;
+      justify-content: space-between;
+      &__label {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13px;
+      }
+    }
+    &__selects {
+      margin-top: 30px;
+      width: calc(100% - 200px);
+      display: flex;
+      justify-content: space-between;
+      &__input {
+        width: calc(25% - 20px);
+      }
+      &__times {
+        width: calc(25% - 20px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__current {
+          width: calc(50% - 20px);
+        }
+      }
+      &__total_time {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        color: #898f97;
+        margin-top: 15px;
+      }
+    }
+    &__week {
+      width: 240px;
+      margin-top: 30px;
+      &__day {
+        margin: 12px 0px;
+        display: flex;
+        justify-content: space-between;
+        &__name {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+        }
+        &__inputs {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+    }
+    &__save_btn {
+      margin-top: 54px;
+      div {
+        width: 180px;
+      }
+    }
+  }
+  &__service_suspension {
+    &__header {
+      @include mixHeader();
+    }
+    &__info {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 15px;
+      width: 460px;
+      margin: 10px 0px;
+    }
+    a {
+      text-decoration: underline;
+    }
+  }
+}

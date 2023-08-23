@@ -1,0 +1,14 @@
+.root {
+  &__contracts,
+  &__acts {
+    margin-top: 25px;
+    &__header {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    &__table {
+      margin-top: 35px;
+    }
+  }
+}

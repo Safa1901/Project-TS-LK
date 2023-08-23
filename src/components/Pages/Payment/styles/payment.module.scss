@@ -1,0 +1,7 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+  &__payment_block {
+    width: 50%;
+  }
+}

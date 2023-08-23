@@ -1,0 +1,65 @@
+.root {
+  &__notifications_wrapper {
+    margin-top: 35px;
+    &__date {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 15px;
+    }
+    &__default {
+      min-height: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      div:nth-child(1) {
+        width: 66.66%;
+        text-align: left;
+      }
+      div:nth-child(2) {
+        width: 33.33%;
+        text-align: center;
+      }
+    }
+    &__sale {
+      min-height: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      div:nth-child(1) {
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span {
+          width: 45px;
+          height: 16px;
+          background: #ff4114;
+          border-radius: 5px;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 10px;
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      div:nth-child(2) {
+        width: 56.66%;
+        text-align: left;
+      }
+      div:nth-child(3) {
+        width: 33.33%;
+        text-align: center;
+      }
+    }
+  }
+  &__issued_active_notifications {
+    margin-top: 35px;
+  }
+}
+.selected {
+  background-color: #f8f9fa;
+}

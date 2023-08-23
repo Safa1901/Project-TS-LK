@@ -1,0 +1,9 @@
+@import '@Scss/colors.scss';
+.header {
+  display: flex;
+  height: 100px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid $borderColor;
+  margin: 0px 130px 0px 20px;
+}
