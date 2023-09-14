@@ -20,6 +20,9 @@
       }
     }
   }
+  .root__header_container__wrapper__name {
+    font-weight: bold;
+  }
   .create_object_wrapper {
     height: 94px;
     display: flex;
@@ -30,9 +33,8 @@
       font-weight: normal;
       font-size: 15px;
       line-height: 20px;
-      color: $appBlue;
       border: none;
-      background-color: #fff;
+      background-color: #F8F9FA;
       cursor: pointer;
     }
     &__filters {
@@ -60,3 +62,16 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
 }
+
+.menuList {
+  font-weight: 500;
+  font-size: 15 !important;
+  border-radius: 10px;
+  line-height: 18.29px
+
+}
+// .btn_menu_button {
+//   border-radius: 10px;
+//   border: #CED2DC;
+//   color: red;
+// }

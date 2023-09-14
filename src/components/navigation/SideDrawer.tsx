@@ -4,13 +4,15 @@ import clsx from 'clsx'
 import { ReactComponent as MainMenuIcon } from '@Files/mainMenu.svg'
 import { ReactComponent as FavoriteIcon } from '@Files/favorite.svg'
 import { ReactComponent as DocumentIcon } from '@Files/document.svg'
-import { ReactComponent as NotifyIcon } from '@Files/notify.svg'
+// import { ReactComponent as NotifyIcon } from '@Files/notify.svg'
 import { ReactComponent as UserNotifyIcon } from '@Files/userNotify.svg'
 //css
 import styles from './styles/sideDrawer.module.scss'
 import { WarningBall } from 'templates/warningBall'
 import { useHistory } from 'react-router-dom'
 import { AdminArrowMenuIcon } from '@Files/icons'
+import Button from '@material-ui/core/Button';
+// import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 
 interface IProps {
   warningMain?: boolean
@@ -42,65 +44,128 @@ export const SideDrawer = React.memo(
       },
       {
         name: '/favorite',
-        label: 'Избранное',
+        label: 'Оплата',
         defaultIcon: FavoriteIcon,
         warning: false,
-        url: '/favorite',
+        url: '/payment',
       },
       {
         name: '/documents',
-        label: 'Документы',
+        label: 'Отчеты',
         defaultIcon: DocumentIcon,
         warning: false,
         url: '/documents',
       },
-      {
-        name: '/events',
-        label: 'События',
-        defaultIcon: NotifyIcon,
-        warning: warningNotify,
-        url: '/events',
-      },
-      {
-        name: '/users/notifications',
-        label: 'Уведомления пользователей',
-        defaultIcon: UserNotifyIcon,
-        warning: warningUserNotify,
-        url: '/users/notifications',
-      },
+      // {
+      //   name: '/events',
+      //   label: 'События',
+      //   defaultIcon: NotifyIcon,
+      //   warning: warningNotify,
+      //   url: '/events',
+      // },
+      // {
+      //   name: '/users/notifications',
+      //   label: 'Уведомления пользователей',
+      //   defaultIcon: UserNotifyIcon,
+      //   warning: warningUserNotify,
+      //   url: '/users/notifications',
+      // },
     ]
     const menuListAdmin = [
       {
-        name: '/admin/users/notifications',
+        name: '/admin/notifications/notifications',
         label: 'Уведомления пользователей',
         defaultIcon: null,
         warning: false,
-        url: '/admin/users/notifications',
+        url: '/admin/notifications/notifications',
       },
       {
         name: '/admin/users/notifications/types',
-        label: 'Типы уведомлений',
+        label: 'Объекты НеваОнлайн',
         defaultIcon: null,
         warning: false,
         url: '/admin/users/notifications/types',
       },
       {
         name: '/admin/users',
-        label: 'Пользователи',
+        label: 'Объекты',
         defaultIcon: null,
         warning: false,
         url: '/admin/users',
       },
       {
         name: '/admin/report/power/supply',
-        label: 'Отчёты электропитания',
+        label: 'Пульты',
         defaultIcon: null,
         warning: false,
         url: '/admin/report/power/supply',
       },
       {
         name: '/admin/report/notifications',
-        label: 'Отчеты по событиям',
+        label: 'Платежи',
+        defaultIcon: UserNotifyIcon,
+        warning: false,
+        url: '/admin/report/notifications',
+      },
+      {
+        name: '/admin/report/notifications',
+        label: 'Сработки ПТК',
+        defaultIcon: UserNotifyIcon,
+        warning: false,
+        url: '/admin/report/notifications',
+      },
+      {
+        name: '/admin/report/notifications',
+        label: 'Список услуг',
+        defaultIcon: UserNotifyIcon,
+        warning: false,
+        url: '/admin/report/notifications',
+      },
+      {
+        name: '/admin/report/notifications',
+        label: 'Зона ответственности',
+        defaultIcon: UserNotifyIcon,
+        warning: false,
+        url: '/admin/report/notifications',
+      },
+      {
+        name: '/admin/report/notifications',
+        label: 'Журнал изменений',
+        defaultIcon: UserNotifyIcon,
+        warning: false,
+        url: '/admin/report/notifications',
+      },
+      {
+        name: '/admin/report/notifications',
+        label: 'Зона обслуживания',
+        defaultIcon: UserNotifyIcon,
+        warning: false,
+        url: '/admin/report/notifications',
+      },
+      {
+        name: '/admin/report/notifications',
+        label: 'Реквизиты компаний',
+        defaultIcon: UserNotifyIcon,
+        warning: false,
+        url: '/admin/report/notifications',
+      },
+      {
+        name: '/admin/report/notifications',
+        label: 'Отправка уведомлений',
+        defaultIcon: UserNotifyIcon,
+        warning: false,
+        url: '/admin/report/notifications',
+      },
+      {
+        name: '/admin/report/notifications',
+        label: 'Отчеты',
+        defaultIcon: UserNotifyIcon,
+        warning: false,
+        url: '/admin/report/notifications',
+      },
+      {
+        name: '/admin/report/notifications',
+        label: 'Настройки',
         defaultIcon: UserNotifyIcon,
         warning: false,
         url: '/admin/report/notifications',
@@ -110,14 +175,14 @@ export const SideDrawer = React.memo(
       <section className={styles.root}>
         <section className={styles.menuListWrapper}>
           <section className={styles.listWrapper}>
-            <div className={styles.listHeader}>меню</div>
+            {/* <div className={styles.listHeader}>меню</div> */}
             <div className={styles.list}>
               {menuList &&
                 menuList.map((item, index) => {
                   const DefaultIcon = item.defaultIcon
                   const selected = hist === item.url
                   return (
-                    <button
+                    <Button
                       key={index}
                       className={clsx({
                         [styles.listItem]: true,
@@ -128,7 +193,7 @@ export const SideDrawer = React.memo(
                         return handleChangeDrawer(item.url)
                       }}
                     >
-                      <DefaultIcon />
+                      <DefaultIcon  className={styles.iconSidebar}/>
                       <div
                         className={clsx({
                           [styles.listItemRootText]: true,
@@ -138,7 +203,7 @@ export const SideDrawer = React.memo(
                         {item.label}
                       </div>
                       <div>{item.warning && warningIcon}</div>
-                    </button>
+                    </Button>
                   )
                 })}
             </div>

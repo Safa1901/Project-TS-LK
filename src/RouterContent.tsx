@@ -13,7 +13,7 @@ import { SupportContainer } from 'components/Pages/Support/SupportContainer'
 import { NewAppealsToSupportContainer } from 'components/Pages/Support/NewAppealsToSupport/NewAppealsToSupportContainer'
 import { IssuedAppealsToSupport } from 'components/Pages/Support/IssuedAppealsToSupport/IssuedAppealsToSupport'
 import { EventsContainer } from 'components/Pages/Events/EventsContainer'
-import { Notification } from 'components/Pages/Events/Notification'
+import { Notifications } from 'components/Pages/Admin/Notifications/Notifications'
 import { DetailObjectContainer } from 'components/Pages/DetailObject/DetailObjectContainer'
 export const RouterContent = () => {
   const Object = {
@@ -99,15 +99,15 @@ export const RouterContent = () => {
       />
       <Route
         exact={true}
-        path="/events/notification/:id"
-        render={(props) => {
-          const {
-            match: {
-              params: { id },
-            },
-          } = props
+        path="/admin/notifications/notifications/"
+        render={() => {
+          // const {
+          //   match: {
+          //     params: { id },
+          //   },
+          // } = props
           document.title = 'Уведомление'
-          return <Notification id={id} />
+          return <Notifications />
         }}
       />
       <Route

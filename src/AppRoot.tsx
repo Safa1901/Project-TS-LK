@@ -3,7 +3,6 @@ import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 //styles
 import styles from '@Scss/app.module.scss'
-import LogoIcon from '@Files/Logo.svg'
 import Drawer from '@material-ui/core/Drawer'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import AppBar from '@material-ui/core/AppBar'
@@ -45,11 +44,6 @@ export class AppRoot extends React.PureComponent<IPropsAppRoot, IStateAppRoot> {
             }}
             anchor="left"
           >
-            <div className={styles.toolbar}>
-              <section className={styles.toolbar__logo}>
-                <img src={LogoIcon} alt="" />
-              </section>
-            </div>
             <SideDrawer
               hist={hist}
               handleChangeDrawer={this.handleChangeDrawer}
@@ -58,28 +52,6 @@ export class AppRoot extends React.PureComponent<IPropsAppRoot, IStateAppRoot> {
           <section className={styles.main}>
             <section className={styles.main__content}>
               <RouterContent />
-            </section>
-            <section className={styles.main__footer}>
-              <div className={styles.main__footer__copyright}>
-                Нева охрана, 2020 Все права защищены
-              </div>
-              <div className={styles.main__footer__copyright__icons}>
-                <div>
-                  <a href="#" rel="noreferrer noopener">
-                    <i className="fab fa-vk"></i>
-                  </a>
-                </div>
-                <div>
-                  <a href="#" rel="noreferrer noopener">
-                    <i className="fab fa-instagram-square"></i>
-                  </a>
-                </div>
-                <div>
-                  <a href="#" rel="noreferrer noopener">
-                    <i className="fab fa-facebook-square"></i>
-                  </a>
-                </div>
-              </div>
             </section>
           </section>
         </div>

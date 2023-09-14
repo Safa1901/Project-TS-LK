@@ -1,13 +1,14 @@
 @import '@Scss/colors';
 .root__object__status {
-  width: 100%;
-  /* width: 480px; */
-  height: 179px;
-  background: $borderColor;
+  // width: 100%;
+  width: 480px; 
+  height: 207px;
+  background: #FFFFFF;
   border-radius: 5px;
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+  
   &__header {
     /* width: 460px; */
     width: calc(100% - 21px);

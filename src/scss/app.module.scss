@@ -5,31 +5,36 @@ $drawerWidth: 310px;
   display: flex;
   min-height: 100%;
   .appBar {
-    width: calc(100% - 310px);
-    margin-left: $drawerWidth;
-    height: 100px;
-    background-color: #fff;
+    width: 100%;
+    height: 74px;
+    background-color: #F1F3F5;
     box-shadow: none;
   }
   .drawer {
     width: $drawerWidth;
     flex-shrink: 0;
+    height: 950px;
   }
   .drawerPaper {
     width: $drawerWidth;
-    background-color: #f8f9fa;
+    background-color: #FFFFFF;
+    border-right: none;
+    height: 950px;
+    margin-top: 74px;
   }
-  .toolbar {
-    height: 100px;
-    &__logo {
-      margin: 20px 20px 0px 0px;
-      display: flex;
-      justify-content: flex-end;
-    }
-  }
+  // .toolbar {
+  //   height: 74px;
+  //   width: 310px;
+  //   background-color: #F1F3F5;
+  //   &__logo {
+  //     margin: 20px 20px 0px 0px;
+  //     display: flex;
+  //     justify-content: flex-end;
+  //   }
+  // }
   .main {
     flex-grow: 1;
-    background-color: #fff;
+    background-color: #F8F9FA;
     padding-left: 20px;
     padding-right: 130px;
     display: flex;

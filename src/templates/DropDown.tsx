@@ -9,13 +9,15 @@ import clsx from 'clsx'
 import { Link } from 'react-router-dom'
 import { ArrowDownIcon, ArrowUpIcon } from '@Files/icons'
 import { ButtonMenuIcon } from './Buttons/Buttons'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
 
 export const DropDown: React.FC<IPropsDrowDown> = React.memo(
   ({ label, open, handleToggleOpen }) => {
     const [menuList] = React.useState([
       { label: 'Аккаунт', link: '/account' },
-      { label: 'Оплата', link: '/payment' },
-      { label: 'Техподдержка', link: '/support' },
+      // { label: 'Оплата', link: '/payment' },
+      // { label: 'Техподдержка', link: '/support' },
       { label: 'Выйти', link: '#' },
     ])
     const visibleDrowDownContent = clsx({
@@ -24,9 +26,10 @@ export const DropDown: React.FC<IPropsDrowDown> = React.memo(
       [styles.hide]: !open,
     })
     return (
-      <div className={styles.dropdown} style={{ float: 'right' }}>
+      <div className={styles.dropdssDssown}>
         <button className={styles.dropbtn} onClick={handleToggleOpen}>
           {label}
+          <ExpandMoreIcon className={styles.dropIcon}/>
         </button>
         <div className={visibleDrowDownContent}>
           {menuList &&

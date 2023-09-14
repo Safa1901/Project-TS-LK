@@ -4,10 +4,18 @@ import styles from './style.module.scss'
 //components
 import { ObjectStatus } from 'templates/Object/ObjectStatus'
 import { ObjectsTable } from 'templates/Object/ObjectsTable'
-import { ButtonIconFilter } from 'templates/Buttons/Buttons'
 import { DropDownFilter } from 'templates/DropDown'
 import clsx from 'clsx'
 import { data as defaultData } from './data'
+
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import Button from '@material-ui/core/Button';
+import { styled  } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Switch from '@material-ui/core/Switch';
 
 interface IFilteres {
   [key: string]: boolean
@@ -18,12 +26,34 @@ interface IFilteres {
   map: boolean
   block: boolean
 }
+const MyButton = styled(Button) ({
+  borderRadius: 10,
+  width: 150,
+  height: 40,
+  fontSize: 15,
+  fontWeight: 500,
+  textTransform: 'none',
+  borderColor: '#CED2DC',
+  border: 'solid 1px',
+  marginRight: 10,
+})
+
 
 export const MainPageContainer = React.memo(({}) => {
+
+  const [protectionFilter, setProtectionFilter] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(protectionFilter);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setProtectionFilter(event.currentTarget);
+  };
+  const handleClose = () => {
+    setProtectionFilter(null);
+  };
+
   const [data, setData] = React.useState<any[]>([])
   const [filters, setFilters] = React.useState<IFilteres>({
     guarded: false,
-    list: false,
+    list: true,
     disarm: false,
     inactive: false,
     map: false,
@@ -80,32 +110,56 @@ export const MainPageContainer = React.memo(({}) => {
         </div>
       </div>
       <div className={styles.create_object_wrapper}>
-        <button className={styles.create_object_wrapper__add_btn}>
-          Добавить новый объект
-        </button>
+        <Typography  className={styles.create_object_wrapper__add_btn} color="textSecondary">
+          У вас N объект (-ов)
+        </Typography>
         <div className={styles.create_object_wrapper__filters}>
           <div>
-            <ButtonIconFilter />
-          </div>
-          <div className={styles.create_object_wrapper__filters__col}>
-            <DropDownFilter
-              label={'Под охраной'}
-              open={filters.guarded}
-              handleToggleOpen={handleChange('guarded')}
-            />
-            <DropDownFilter
-              label={'Снят с охраны'}
-              open={filters.disarm}
-              handleToggleOpen={handleChange('disarm')}
-            />
+            <MyButton className={styles.menuList} aria-controls="basic-menu" aria-haspopup="true" onClick={handleClick}>
+              Все объекты
+            </MyButton>
+            <Menu
+              id="basic-menu"
+              anchorEl={protectionFilter}
+              open={open}
+              onClose={handleClose}
+              variant='selectedMenu'
+              MenuListProps={{
+              'aria-labelledby': 'basic-button',
+              }}
+            >
+              <MenuItem onClick={handleClose}> 
+                <DropDownFilter
 
-            <DropDownFilter
-              label={'Неактивен'}
-              open={filters.inactive}
-              handleToggleOpen={handleChange('inactive')}
-            />
+                  label={'Под охраной'}
+                  open={filters.guarded}
+                  handleToggleOpen={handleChange('guarded')}
+                />
+              </MenuItem>
+              <MenuItem>
+                <DropDownFilter
+                  label={'Снят с охраны'}
+                  open={filters.disarm}
+                  handleToggleOpen={handleChange('disarm')}
+                />
+              </MenuItem>
+              <MenuItem>
+                <DropDownFilter
+                  label={'Неактивен'}
+                  open={filters.inactive}
+                  handleToggleOpen={handleChange('inactive')}
+                />
+              </MenuItem>
+            </Menu>
+
           </div>
-          <div className={styles.create_object_wrapper__filters__col}>
+          <FormGroup>
+            <FormControlLabel
+              control={<Switch checked={filters.list || filters.block} onChange={handleChange('block')} name='block'/> }
+              label='Списком'
+            />
+          </FormGroup>
+          {/* <div className={styles.create_object_wrapper__filters__col}>
             <DropDownFilter
               label={'Списком'}
               open={filters.list}
@@ -121,7 +175,7 @@ export const MainPageContainer = React.memo(({}) => {
               open={filters.map}
               handleToggleOpen={handleChange('map')}
             />
-          </div>
+          </div> */}
         </div>
       </div>
       <section className={clsx(styles.Rtable)}>
