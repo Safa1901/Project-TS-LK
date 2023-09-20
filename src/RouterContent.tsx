@@ -15,6 +15,9 @@ import { IssuedAppealsToSupport } from 'components/Pages/Support/IssuedAppealsTo
 import { EventsContainer } from 'components/Pages/Events/EventsContainer'
 import { Notifications } from 'components/Pages/Admin/Notifications/Notifications'
 import { DetailObjectContainer } from 'components/Pages/DetailObject/DetailObjectContainer'
+import { ObjectNevaOnlain } from 'components/Pages/Admin/Object/ObjectNevaOnlain'
+import { Pults } from 'components/Pages/Admin/Pults/Pults'
+
 export const RouterContent = () => {
   const Object = {
     id: 14,
@@ -108,6 +111,22 @@ export const RouterContent = () => {
           // } = props
           document.title = 'Уведомление'
           return <Notifications />
+        }}
+      />
+      <Route
+        exact={true}
+        path="/admin/object/objects/"
+        render={() => {
+          document.title = 'Объекты НеваОнлайн'
+          return <ObjectNevaOnlain />
+        }}
+      />
+      <Route
+        exact={true}
+        path="/admin/pults/pults/"
+        render={() => {
+          document.title = 'Пулты'
+          return <Pults />
         }}
       />
       <Route

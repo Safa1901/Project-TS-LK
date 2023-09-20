@@ -2,7 +2,7 @@ import React from 'react'
 import clsx from 'clsx'
 //icons
 import { ReactComponent as MainMenuIcon } from '@Files/mainMenu.svg'
-import { ReactComponent as FavoriteIcon } from '@Files/favorite.svg'
+import { ReactComponent as Payment } from '@Files/Payment.svg'
 import { ReactComponent as DocumentIcon } from '@Files/document.svg'
 // import { ReactComponent as NotifyIcon } from '@Files/notify.svg'
 import { ReactComponent as UserNotifyIcon } from '@Files/userNotify.svg'
@@ -45,7 +45,7 @@ export const SideDrawer = React.memo(
       {
         name: '/favorite',
         label: 'Оплата',
-        defaultIcon: FavoriteIcon,
+        defaultIcon: Payment,
         warning: false,
         url: '/payment',
       },
@@ -80,11 +80,11 @@ export const SideDrawer = React.memo(
         url: '/admin/notifications/notifications',
       },
       {
-        name: '/admin/users/notifications/types',
+        name: '/admin/object/objects/',
         label: 'Объекты НеваОнлайн',
         defaultIcon: null,
         warning: false,
-        url: '/admin/users/notifications/types',
+        url: '/admin/object/objects/',
       },
       {
         name: '/admin/users',
@@ -94,11 +94,11 @@ export const SideDrawer = React.memo(
         url: '/admin/users',
       },
       {
-        name: '/admin/report/power/supply',
+        name: '/admin/pults/pults',
         label: 'Пульты',
         defaultIcon: null,
         warning: false,
-        url: '/admin/report/power/supply',
+        url: '/admin/pults/pults',
       },
       {
         name: '/admin/report/notifications',
