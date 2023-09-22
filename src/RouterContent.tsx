@@ -125,7 +125,7 @@ export const RouterContent = () => {
         exact={true}
         path="/admin/pults/pults/"
         render={() => {
-          document.title = 'Пулты'
+          document.title = 'Пульты'
           return <Pults />
         }}
       />

@@ -3,6 +3,10 @@ import { createStyles, makeStyles, withStyles, Theme } from '@material-ui/core/s
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import InputBase from '@material-ui/core/InputBase';
+import NativeSelect from '@material-ui/core/NativeSelect';
+import Checkbox from '@material-ui/core/Checkbox';
+import SaveIcon from '@material-ui/icons/Save';
+import ClearIcon from '@material-ui/icons/Clear';
 
 const BootstrapInput = withStyles((theme: Theme) =>
   createStyles({
@@ -49,14 +53,127 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
+
+
 export const PultsTable = () => {
-    const classes = useStyles();
+  const classes = useStyles();
+
+  const [age, setAge] = React.useState('');
+  const [checked, setChecked] = React.useState(true);
+  const [checkeded, setCheckeded] = React.useState(true);
+
+  const handleChangeCheck = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setChecked(event.target.checked);
+  };
+  const handleChangeCheck2 = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCheckeded(event.target.checked);
+  };
+
+  const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+    setAge(event.target.value as string);
+  };
+
     return (
         <div>
-            <FormControl className={classes.margin}>
-                <InputLabel htmlFor="demo-customized-textbox">Название</InputLabel>
-                <BootstrapInput id="demo-customized-textbox" />
-            </FormControl>
+          <table>
+            <thead>
+              <tr>
+                <th>Название</th>
+                <th>Дескриптор</th>
+                <th>Хост</th>
+                <th>Порт</th>
+                <th>БД</th>
+                <th>Имя пользователя</th>
+                <th>Пароль</th>
+                <th>Тип</th>
+                <th>Код для управления</th>
+                <th>Сихронизация доступна</th>
+                <th>Действия</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <FormControl className={classes.margin}>
+                      <InputLabel htmlFor="demo-customized-textbox">Название</InputLabel>
+                      <BootstrapInput id="demo-customized-textbox" />
+                  </FormControl>
+                </td>
+                <td>
+                  <p>krd_phoenix</p>
+                </td>
+                <td>
+                  <FormControl className={classes.margin}>
+                      <InputLabel htmlFor="demo-customized-textbox">Название</InputLabel>
+                      <BootstrapInput id="demo-customized-textbox" />
+                  </FormControl>
+                </td>
+                <td>
+                  <FormControl className={classes.margin}>
+                      <InputLabel htmlFor="demo-customized-textbox">Название</InputLabel>
+                      <BootstrapInput id="demo-customized-textbox" />
+                  </FormControl>
+                </td>
+                <td>
+                  <FormControl className={classes.margin}>
+                      <InputLabel htmlFor="demo-customized-textbox">Название</InputLabel>
+                      <BootstrapInput id="demo-customized-textbox" />
+                  </FormControl>
+                </td>
+                <td>
+                  <FormControl className={classes.margin}>
+                      <InputLabel htmlFor="demo-customized-textbox">Название</InputLabel>
+                      <BootstrapInput id="demo-customized-textbox" />
+                  </FormControl>
+                </td>
+                <td>
+                  <FormControl className={classes.margin}>
+                      <InputLabel htmlFor="demo-customized-textbox">Название</InputLabel>
+                      <BootstrapInput id="demo-customized-textbox" />
+                  </FormControl>
+                </td>
+                <td>
+                  <FormControl className={classes.margin}>
+                  <InputLabel htmlFor="demo-customized-select-native">Тип системы</InputLabel>
+                    <NativeSelect
+                      id="demo-customized-select-native"
+                      value={age}
+                      onChange={handleChange}
+                      input={<BootstrapInput />}
+                    >
+                      <option aria-label="None" value="" />
+                      <option value={10}>pheonex</option>
+                      <option value={20}>andromeda</option>
+                      <option value={30}>mirage</option>
+                    </NativeSelect>
+                  </FormControl>
+                </td>
+                <td>
+                  <FormControl className={classes.margin}>
+                    <Checkbox
+                      checked={checked}
+                      onChange={handleChangeCheck}
+                      inputProps={{ 'aria-label': 'primary checkbox' }}
+                    />
+                  </FormControl>
+                </td>
+                <td>
+                  <FormControl className={classes.margin}>
+                    <Checkbox
+                        checked={checkeded}
+                        onChange={handleChangeCheck2}
+                        inputProps={{ 'aria-label': 'primary checkbox' }}
+                      />
+                  </FormControl>
+                </td>
+                <td>
+                    <ClearIcon/>
+                    <SaveIcon/>
+                </td>
+              </tr>
+            </tbody>
+
+          </table>
         </div>
     )
 }
