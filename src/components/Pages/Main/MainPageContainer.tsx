@@ -13,9 +13,9 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Button from '@material-ui/core/Button';
 import { styled  } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Switch from '@material-ui/core/Switch';
+// import FormGroup from '@material-ui/core/FormGroup';
+// import FormControlLabel from '@material-ui/core/FormControlLabel';
+// import Switch from '@material-ui/core/Switch';
 
 interface IFilteres {
   [key: string]: boolean
@@ -23,7 +23,6 @@ interface IFilteres {
   list: boolean
   disarm: boolean
   inactive: boolean
-  map: boolean
   block: boolean
 }
 const MyButton = styled(Button) ({
@@ -40,25 +39,35 @@ const MyButton = styled(Button) ({
 
 
 export const MainPageContainer = React.memo(({}) => {
-
-  const [protectionFilter, setProtectionFilter] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(protectionFilter);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setProtectionFilter(event.currentTarget);
-  };
-  const handleClose = () => {
-    setProtectionFilter(null);
-  };
-
   const [data, setData] = React.useState<any[]>([])
+
   const [filters, setFilters] = React.useState<IFilteres>({
     guarded: false,
     list: true,
     disarm: false,
     inactive: false,
-    map: false,
     block: true,
   })
+
+  const [protectionFilter, setProtectionFilter] = React.useState<null | HTMLElement>(null);
+  const [protectionFilters, setProtectionFilters] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(protectionFilter);
+  const opens = Boolean(protectionFilters);
+
+  const handleClicks = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setProtectionFilters(event.currentTarget);
+  };
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setProtectionFilter(event.currentTarget);
+  };
+  const handleCloses = () => {
+    setProtectionFilters(null);
+  };
+  const handleClose = () => {
+    setProtectionFilter(null);
+  };
+
   const handleChange = (name: string) => (event: any) => {
     const _filters = { ...filters }
     let result: { [key: string]: boolean } = {}
@@ -136,14 +145,14 @@ export const MainPageContainer = React.memo(({}) => {
                   handleToggleOpen={handleChange('guarded')}
                 />
               </MenuItem>
-              <MenuItem>
+              <MenuItem onClick={handleClose}>
                 <DropDownFilter
                   label={'Снят с охраны'}
                   open={filters.disarm}
                   handleToggleOpen={handleChange('disarm')}
                 />
               </MenuItem>
-              <MenuItem>
+              <MenuItem onClick={handleClose}>
                 <DropDownFilter
                   label={'Неактивен'}
                   open={filters.inactive}
@@ -153,29 +162,37 @@ export const MainPageContainer = React.memo(({}) => {
             </Menu>
 
           </div>
-          <FormGroup>
-            <FormControlLabel
-              control={<Switch checked={filters.list || filters.block} onChange={handleChange('block')} name='block'/> }
-              label='Списком'
-            />
-          </FormGroup>
-          {/* <div className={styles.create_object_wrapper__filters__col}>
-            <DropDownFilter
-              label={'Списком'}
-              open={filters.list}
-              handleToggleOpen={handleChange('list')}
-            />
-            <DropDownFilter
-              label={'Блоками'}
-              open={filters.block}
-              handleToggleOpen={handleChange('block')}
-            />
-            <DropDownFilter
-              label={'На карте'}
-              open={filters.map}
-              handleToggleOpen={handleChange('map')}
-            />
-          </div> */}
+          <div>
+            <MyButton className={styles.menuList} aria-controls="basic" aria-haspopup="true" onClick={handleClicks}>
+              Показать объекты
+            </MyButton>
+            <Menu
+              id="basic"
+              anchorEl={protectionFilter}
+              open={opens}
+              onClose={handleClose}
+              variant='selectedMenu'
+              MenuListProps={{
+              'aria-labelledby': 'basic-button',
+              }}
+            >
+              <MenuItem onClick={handleCloses}> 
+                <DropDownFilter
+                  label={'Списком'}
+                  open={filters.list}
+                  handleToggleOpen={handleChange('list')}
+                />
+              </MenuItem>
+              <MenuItem onClick={handleCloses}>
+                <DropDownFilter
+                  label={'Блоками'}
+                  open={filters.block}
+                  handleToggleOpen={handleChange('block')}
+                />
+              </MenuItem>
+            </Menu>
+
+          </div>
         </div>
       </div>
       <section className={clsx(styles.Rtable)}>

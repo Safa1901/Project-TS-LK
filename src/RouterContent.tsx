@@ -9,9 +9,6 @@ import { MainPageContainer } from './components/Pages/Main/MainPageContainer'
 import { AccountContainer } from 'components/Pages/Account/AccountContainer'
 import { NewPaymentAccountContainer } from 'components/Pages/NewPaymentAccount/NewPaymentAccountContainer'
 import { PaymentContainer } from 'components/Pages/Payment/PaymentContainer'
-import { SupportContainer } from 'components/Pages/Support/SupportContainer'
-import { NewAppealsToSupportContainer } from 'components/Pages/Support/NewAppealsToSupport/NewAppealsToSupportContainer'
-import { IssuedAppealsToSupport } from 'components/Pages/Support/IssuedAppealsToSupport/IssuedAppealsToSupport'
 import { EventsContainer } from 'components/Pages/Events/EventsContainer'
 import { Notifications } from 'components/Pages/Admin/Notifications/Notifications'
 import { DetailObjectContainer } from 'components/Pages/DetailObject/DetailObjectContainer'
@@ -65,35 +62,6 @@ export const RouterContent = () => {
       />
       <Route
         exact={true}
-        path="/support"
-        render={() => {
-          document.title = 'Обращения в службу поддержки'
-          return <SupportContainer />
-        }}
-      />
-      <Route
-        exact={true}
-        path="/add/new/appeals/to/suport"
-        render={() => {
-          document.title = 'Обращения в службу поддержки'
-          return <NewAppealsToSupportContainer />
-        }}
-      />
-      <Route
-        exact={true}
-        path="/support/appeal/:id"
-        render={(props) => {
-          const {
-            match: {
-              params: { id },
-            },
-          } = props
-          document.title = 'Обращения в службу поддержки'
-          return <IssuedAppealsToSupport id={id} />
-        }}
-      />
-      <Route
-        exact={true}
         path="/events"
         render={() => {
           document.title = 'События и уведомления'
@@ -104,11 +72,6 @@ export const RouterContent = () => {
         exact={true}
         path="/admin/notifications/notifications/"
         render={() => {
-          // const {
-          //   match: {
-          //     params: { id },
-          //   },
-          // } = props
           document.title = 'Уведомление'
           return <Notifications />
         }}
