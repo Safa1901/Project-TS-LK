@@ -12,6 +12,7 @@ import { WarningBall } from 'templates/warningBall'
 import { useHistory } from 'react-router-dom'
 import { AdminArrowMenuIcon } from '@Files/icons'
 import Button from '@material-ui/core/Button';
+import Divider from '@material-ui/core/Divider';
 // import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 
 interface IProps {
@@ -23,6 +24,24 @@ interface IProps {
   hist: string
   handleChangeDrawer: (hist: string) => void
 }
+
+interface Admin {
+  name: string;
+  phone: string;
+  email: string
+}
+
+function createAdmin(
+  name: string,
+  phone: string,
+  email: string
+): Admin {
+  return { name, phone, email}
+} 
+
+const adminAdd = [
+  createAdmin('Кирилл Сергеевич', '+79649111876', 'k.vasilchenko@ohrana-neva.ru')
+]
 export const SideDrawer = React.memo(
   ({
     warningNotify = true,
@@ -175,7 +194,21 @@ export const SideDrawer = React.memo(
       <section className={styles.root}>
         <section className={styles.menuListWrapper}>
           <section className={styles.listWrapper}>
-            {/* <div className={styles.listHeader}>меню</div> */}
+            <Divider/>
+            <div className={styles.list_admin}>
+              <div className={styles.admin_side}>
+                {adminAdd.map((item, idx) => (
+                    <div key={idx}>
+                      <p className={styles.admin_side_info}>Ваш администратор: <br/>{item.name}</p>
+                      <p className={styles.admin_side_info}>{item.phone}</p>
+                      <p className={styles.admin_side_info}>{item.email}</p>
+                    </div>
+                    
+
+                ))}
+              </div>
+            </div>
+            <Divider/>
             <div className={styles.list}>
               {menuList &&
                 menuList.map((item, index) => {

@@ -43,7 +43,7 @@ export const MainPageContainer = React.memo(({}) => {
 
   const [filters, setFilters] = React.useState<IFilteres>({
     guarded: false,
-    list: true,
+    list: false,
     disarm: false,
     inactive: false,
     block: true,
@@ -105,6 +105,8 @@ export const MainPageContainer = React.memo(({}) => {
       setData(filtered)
     } else setData(defaultData)
   }, [filters.inactive])
+
+
   return (
     <section className={styles.root}>
       <div className={styles.root__header_container}>
@@ -163,14 +165,14 @@ export const MainPageContainer = React.memo(({}) => {
 
           </div>
           <div>
-            <MyButton className={styles.menuList} aria-controls="basic" aria-haspopup="true" onClick={handleClicks}>
-              Показать объекты
+            <MyButton className={styles.menuList_obj} aria-controls="basic-obj" aria-haspopup="true" onClick={handleClicks}>
+              Показать
             </MyButton>
             <Menu
-              id="basic"
-              anchorEl={protectionFilter}
+              id="basic-obj"
+              anchorEl={protectionFilters}
               open={opens}
-              onClose={handleClose}
+              onClose={handleCloses}
               variant='selectedMenu'
               MenuListProps={{
               'aria-labelledby': 'basic-button',

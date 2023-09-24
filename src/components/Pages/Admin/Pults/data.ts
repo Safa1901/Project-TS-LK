@@ -8,7 +8,8 @@ export const pultsData = [
         available_sync: true,
         code_required: false,
         db_name: "Pult4DB",
-        type: "phoenix"
+        type: "phoenix",
+        user_name: "sa"
     },
     {
         id: 2,
@@ -19,7 +20,8 @@ export const pultsData = [
         available_sync: false,
         code_required: true,
         db_name: "Pult4DB",
-        type: "phoenix"
+        type: "phoenix",
+        user_name: "sa"
     },
     {
         id: 3,
@@ -30,7 +32,8 @@ export const pultsData = [
         available_sync: true,
         code_required: true,
         db_name: "Pult4DB",
-        type: "phoenix"
+        type: "phoenix",
+        user_name: "sa"
     },
     {
         id: 4,
@@ -41,7 +44,8 @@ export const pultsData = [
         available_sync: true,
         code_required: false,
         db_name: "Pult4DB",
-        type: "phoenix"
+        type: "phoenix",
+        user_name: "sa"
     },
     {
         id: 5,
@@ -52,7 +56,8 @@ export const pultsData = [
         available_sync: false,
         code_required: true,
         db_name: "Pult4DB",
-        type: "phoenix"
+        type: "phoenix",
+        user_name: "sa"
     },
     {
         id: 6,
@@ -63,6 +68,7 @@ export const pultsData = [
         available_sync: true,
         code_required: true,
         db_name: "Pult4DB",
-        type: "phoenix"
+        type: "phoenix",
+        user_name: "sa"
     },
 ]

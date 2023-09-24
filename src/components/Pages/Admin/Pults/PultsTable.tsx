@@ -7,6 +7,8 @@ import NativeSelect from '@material-ui/core/NativeSelect';
 import Checkbox from '@material-ui/core/Checkbox';
 import SaveIcon from '@material-ui/icons/Save';
 import ClearIcon from '@material-ui/icons/Clear';
+import { pultsData } from './data';
+
 
 const BootstrapInput = withStyles((theme: Theme) =>
   createStyles({
@@ -53,6 +55,32 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
+interface Data {
+  name: string;
+  panel: string;
+  port: number;
+  host: string;
+  available_sync: boolean;
+  code_required: boolean;
+  db_name: string;
+  type: string;
+  user_name: string;
+}
+
+function createData (
+  name: string,
+  panel: string,
+  port: number,
+  host: string,
+  available_sync: boolean,
+  code_required: boolean,
+  db_name: string,
+  type: string,
+  user_name: string
+) : Data {
+  return { name, panel, port, host, available_sync, code_required, db_name, type, user_name}
+}
+
 
 
 export const PultsTable = () => {
@@ -92,85 +120,88 @@ export const PultsTable = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>
-                  <FormControl className={classes.margin}>
-                      <InputLabel htmlFor="demo-customized-textbox">Название</InputLabel>
-                      <BootstrapInput id="demo-customized-textbox" />
-                  </FormControl>
-                </td>
-                <td>
-                  <p>krd_phoenix</p>
-                </td>
-                <td>
-                  <FormControl className={classes.margin}>
-                      <InputLabel htmlFor="demo-customized-textbox">Название</InputLabel>
-                      <BootstrapInput id="demo-customized-textbox" />
-                  </FormControl>
-                </td>
-                <td>
-                  <FormControl className={classes.margin}>
-                      <InputLabel htmlFor="demo-customized-textbox">Название</InputLabel>
-                      <BootstrapInput id="demo-customized-textbox" />
-                  </FormControl>
-                </td>
-                <td>
-                  <FormControl className={classes.margin}>
-                      <InputLabel htmlFor="demo-customized-textbox">Название</InputLabel>
-                      <BootstrapInput id="demo-customized-textbox" />
-                  </FormControl>
-                </td>
-                <td>
-                  <FormControl className={classes.margin}>
-                      <InputLabel htmlFor="demo-customized-textbox">Название</InputLabel>
-                      <BootstrapInput id="demo-customized-textbox" />
-                  </FormControl>
-                </td>
-                <td>
-                  <FormControl className={classes.margin}>
-                      <InputLabel htmlFor="demo-customized-textbox">Название</InputLabel>
-                      <BootstrapInput id="demo-customized-textbox" />
-                  </FormControl>
-                </td>
-                <td>
-                  <FormControl className={classes.margin}>
-                  <InputLabel htmlFor="demo-customized-select-native">Тип системы</InputLabel>
-                    <NativeSelect
-                      id="demo-customized-select-native"
-                      value={age}
-                      onChange={handleChange}
-                      input={<BootstrapInput />}
-                    >
-                      <option aria-label="None" value="" />
-                      <option value={10}>pheonex</option>
-                      <option value={20}>andromeda</option>
-                      <option value={30}>mirage</option>
-                    </NativeSelect>
-                  </FormControl>
-                </td>
-                <td>
-                  <FormControl className={classes.margin}>
-                    <Checkbox
-                      checked={checked}
-                      onChange={handleChangeCheck}
-                      inputProps={{ 'aria-label': 'primary checkbox' }}
-                    />
-                  </FormControl>
-                </td>
-                <td>
-                  <FormControl className={classes.margin}>
-                    <Checkbox
-                        checked={checkeded}
-                        onChange={handleChangeCheck2}
+              {pultsData.map((pultsDat) => (
+                <tr>
+                  <td>
+                    <FormControl className={classes.margin}>
+                        <InputLabel htmlFor="demo-customized-textbox">Название</InputLabel>
+                        <BootstrapInput id="demo-customized-textbox" value={pultsDat.name} />
+                    </FormControl>
+                  </td>
+                  <td>
+                    <p>krd_phoenix</p>
+                  </td>
+                  <td>
+                    <FormControl className={classes.margin}>
+                        <InputLabel htmlFor="demo-customized-textbox">Дескриптор</InputLabel>
+                        <BootstrapInput id="demo-customized-textbox" value={pultsDat.panel} />
+                    </FormControl>
+                  </td>
+                  <td>
+                    <FormControl className={classes.margin}>
+                        <InputLabel htmlFor="demo-customized-textbox">Хост</InputLabel>
+                        <BootstrapInput id="demo-customized-textbox" value={pultsDat.host}/>
+                    </FormControl>
+                  </td>
+                  <td>
+                    <FormControl className={classes.margin}>
+                        <InputLabel htmlFor="demo-customized-textbox">Порт</InputLabel>
+                        <BootstrapInput id="demo-customized-textbox" value={pultsDat.port}/>
+                    </FormControl>
+                  </td>
+                  <td>
+                    <FormControl className={classes.margin}>
+                        <InputLabel htmlFor="demo-customized-textbox">БД</InputLabel>
+                        <BootstrapInput id="demo-customized-textbox" value={pultsDat.db_name} />
+                    </FormControl>
+                  </td>
+                  <td>
+                    <FormControl className={classes.margin}>
+                        <InputLabel htmlFor="demo-customized-textbox">Имя пользователя</InputLabel>
+                        <BootstrapInput id="demo-customized-textbox" value={pultsDat.user_name}/>
+                    </FormControl>
+                  </td>
+                  <td>
+                    <FormControl className={classes.margin}>
+                    <InputLabel htmlFor="demo-customized-select-native">Пароль</InputLabel>
+                      <NativeSelect
+                        id="demo-customized-select-native"
+                        value={pultsDat.type}
+                        onChange={handleChange}
+                        input={<BootstrapInput />}
+                      >
+                        <option aria-label="None" value="" />
+                        <option value={10}>pheonex</option>
+                        <option value={20}>andromeda</option>
+                        <option value={30}>mirage</option>
+                      </NativeSelect>
+                    </FormControl>
+                  </td>
+                  <td>
+                    <FormControl className={classes.margin}>
+                      <Checkbox
+                        checked={checked}
+                        onChange={handleChangeCheck}
                         inputProps={{ 'aria-label': 'primary checkbox' }}
                       />
-                  </FormControl>
-                </td>
-                <td>
-                    <ClearIcon/>
-                    <SaveIcon/>
-                </td>
-              </tr>
+                    </FormControl>
+                  </td>
+                  <td>
+                    <FormControl className={classes.margin}>
+                      <Checkbox
+                          checked={checkeded}
+                          onChange={handleChangeCheck2}
+                          inputProps={{ 'aria-label': 'primary checkbox' }}
+                        />
+                    </FormControl>
+                  </td>
+                  <td>
+                      <ClearIcon/>
+                      <SaveIcon/>
+                  </td>
+                </tr>
+                
+              ))}
             </tbody>
 
           </table>

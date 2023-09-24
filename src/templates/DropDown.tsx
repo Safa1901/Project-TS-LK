@@ -46,12 +46,12 @@ export const DropDown: React.FC<IPropsDrowDown> = React.memo(
 )
 export const DropDownFilter: React.FC<IPropsDrowDownFilter> = React.memo(
   ({ label, open, handleToggleOpen }) => {
-    const visibleIcon = open ? <ArrowDownIcon /> : <ArrowUpIcon />
+    // const visibleIcon = open ? <ArrowDownIcon /> : <ArrowUpIcon />
     return (
       <div className={styles.dropdown} style={{ float: 'right' }}>
         <button className={styles.dropbtn__filter} onClick={handleToggleOpen}>
           <div>{label}</div>
-          <div>{visibleIcon}</div>
+          {/* <div>{visibleIcon}</div> */}
         </button>
       </div>
     )

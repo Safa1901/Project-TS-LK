@@ -1,6 +1,7 @@
 @import '@Scss/colors';
 .root {
   width: 100%;
+  font-family: Montserrat, sans-serif !important;
   &__header_container {
     display: flex;
     align-items: center;
@@ -58,7 +59,8 @@
 /* Tables
 ================================== */
 .Rtable {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
 }
@@ -70,6 +72,13 @@
   line-height: 18.29px
 
 }
+// .menuList_obj {
+//   font-weight: 500;
+//   font-size: 15 !important;
+//   border-radius: 10px;
+//   line-height: 18.29px
+
+// }
 // .btn_menu_button {
 //   border-radius: 10px;
 //   border: #CED2DC;
