@@ -4,10 +4,14 @@
   width: 480px; 
   height: 207px;
   background: #FFFFFF;
-  border-radius: 5px;
+  border-radius: 15px;
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+    :hover {
+      background-color: #FFE3E3;
+      border-radius: 15px 0 0 15px ;
+    }
   
   &__header {
     /* width: 460px; */

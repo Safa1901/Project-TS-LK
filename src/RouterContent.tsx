@@ -14,6 +14,12 @@ import { Notifications } from 'components/Pages/Admin/Notifications/Notification
 import { DetailObjectContainer } from 'components/Pages/DetailObject/DetailObjectContainer'
 import { ObjectNevaOnlain } from 'components/Pages/Admin/Object/ObjectNevaOnlain'
 import { Pults } from 'components/Pages/Admin/Pults/Pults'
+import { Payments } from 'components/Pages/Admin/Payments/Payments'
+import { TriggeringPTK } from 'components/Pages/Admin/TriggeringPTK/TriggeringPTK'
+import { AreasResponsobility } from 'components/Pages/Admin/AreasResponsobility/AreasResponsobility'
+import  { AreasService } from 'components/Pages/Admin/AreasService/AreasService'
+import { CompanyDetails } from 'components/Pages/Admin/CompanyDetails/CompanyDetails'
+import { SendingNotifications } from 'components/Pages/Admin/SendingNotifications/SendingNotifications'
 
 export const RouterContent = () => {
   const Object = {
@@ -90,6 +96,54 @@ export const RouterContent = () => {
         render={() => {
           document.title = 'Пульты'
           return <Pults />
+        }}
+      />
+      <Route
+        exact={true}
+        path="/admin/payments/payments/"
+        render={() => {
+          document.title = 'Платежи'
+          return <Payments />
+        }}
+      />
+      <Route
+        exact={true}
+        path="/admin/triggering/triggering/"
+        render={() => {
+          document.title = 'Сработки ПТК'
+          return <TriggeringPTK />
+        }}
+      />
+      <Route
+        exact={true}
+        path="/admin/areas/areas/"
+        render={() => {
+          document.title = 'Зоны ответственности'
+          return <AreasResponsobility />
+        }}
+      />
+      <Route
+        exact={true}
+        path="/admin/areasService/areasService/"
+        render={() => {
+          document.title = 'Зоны обслуживания'
+          return <AreasService />
+        }}
+      />
+      <Route
+        exact={true}
+        path="/admin/companyDetails/companyDetails/"
+        render={() => {
+          document.title = 'Реквизиты компаний'
+          return <CompanyDetails />
+        }}
+      />
+      <Route
+        exact={true}
+        path="/admin/sendingNotifications/sendingNotifications/"
+        render={() => {
+          document.title = 'Отправка уведомлений'
+          return <SendingNotifications />
         }}
       />
       <Route

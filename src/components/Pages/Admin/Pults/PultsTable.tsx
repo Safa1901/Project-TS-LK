@@ -8,6 +8,8 @@ import Checkbox from '@material-ui/core/Checkbox';
 import SaveIcon from '@material-ui/icons/Save';
 import ClearIcon from '@material-ui/icons/Clear';
 import { pultsData } from './data';
+import IconButton from '@material-ui/core/IconButton';
+import { ReactComponent as PlusIcon} from '@Files/plusIcon.svg';
 
 
 const BootstrapInput = withStyles((theme: Theme) =>
@@ -82,7 +84,6 @@ function createData (
 }
 
 
-
 export const PultsTable = () => {
   const classes = useStyles();
 
@@ -103,6 +104,9 @@ export const PultsTable = () => {
 
     return (
         <div>
+          <IconButton>
+            <PlusIcon/>
+          </IconButton>
           <table>
             <thead>
               <tr>

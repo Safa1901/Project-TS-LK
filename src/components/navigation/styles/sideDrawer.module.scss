@@ -1,6 +1,9 @@
 @import '@Scss/colors';
 .root {
-  margin-right: 35px;
+  margin-right: 75px;
+  font-family: Montserrat;
+  text-transform: none;
+  // left: -($mobile-width + 30);
   // width: 100%;
   .menuListWrapper {
     display: flex;
@@ -40,6 +43,7 @@
           cursor: pointer;
           font-weight: 500;
           font-size: 14px;
+          line-height: 17.07px;
           margin: 15px 0px;
           display: flex;
           justify-content: space-between;
@@ -53,9 +57,6 @@
           :active {
             color: $appBlue;
           }
-
-          
-
           
           div {
             display: flex;
@@ -67,8 +68,9 @@
             padding-left: 10px;
           }
           .listItemRootTextAdmin {
-            width: 100%;
+            width: 65%;
             text-align: left;
+            
 
           }
           .listItemRootIcon {
@@ -78,6 +80,27 @@
           
         }
 
+        .listItem {
+          width: 170px;
+          height: 40px;
+          cursor: pointer;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 17.07px;
+          margin: 15px 0px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background: transparent;
+          border: none;
+          outline: none;
+          padding: 0px;
+          border-radius: 10px;
+
+          :active {
+            color: $appBlue;
+          }
+        }
         // .listItemActive {
         //   color: $appBlue;
         //   svg {
@@ -93,8 +116,8 @@
 
       .iconSidebar{
         margin-left: 15px;
-        height: 20px;
-        width: 20px;
+        height: 15px;
+        width: 15px;
       }
 
       .list_admin {

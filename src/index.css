@@ -13,7 +13,7 @@ body {
   width: 100%;
   height: calc(100% - 100px);
   font-weight: 500 !important;
-  font-size: 14px !important;
+  font-size: 17px !important;
 }
 #root {
   background-color: #F8F9FA;

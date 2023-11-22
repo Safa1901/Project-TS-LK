@@ -156,8 +156,8 @@ export const ObjectNevaOnlainTable = () => {
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
-  const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
-
+  const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage)
+  
   const handleChangePage = (event: unknown, newPage: number) => {
       setPage(newPage);
   };

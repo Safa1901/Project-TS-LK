@@ -1,18 +1,20 @@
-import * as React from 'react'
+import * as React from 'react';
 //styles
-import styles from './style.module.scss'
+import styles from './style.module.scss';
 //components
-import { ObjectStatus } from 'templates/Object/ObjectStatus'
-import { ObjectsTable } from 'templates/Object/ObjectsTable'
-import { DropDownFilter } from 'templates/DropDown'
-import clsx from 'clsx'
-import { data as defaultData } from './data'
+import { ObjectStatus } from 'templates/Object/ObjectStatus';
+import { ObjectsTable } from 'templates/Object/ObjectsTable';
+import { DropDownFilter } from 'templates/DropDown';
+import clsx from 'clsx';
+import { data as defaultData } from './data';
 
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Button from '@material-ui/core/Button';
 import { styled  } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import { ReactComponent as BlockIcon } from '@Files/filtersBlock.svg';
+import { ReactComponent as ListIcon} from '@Files/filteList.svg';
 // import FormGroup from '@material-ui/core/FormGroup';
 // import FormControlLabel from '@material-ui/core/FormControlLabel';
 // import Switch from '@material-ui/core/Switch';
@@ -28,13 +30,35 @@ interface IFilteres {
 const MyButton = styled(Button) ({
   borderRadius: 10,
   width: 150,
-  height: 40,
+  height: 42,
   fontSize: 15,
   fontWeight: 500,
   textTransform: 'none',
   borderColor: '#CED2DC',
   border: 'solid 1px',
   marginRight: 10,
+  marginLeft: 10,
+})
+
+const MyButtonFilterBlock = styled(Button) ({
+  borderRadius: '10px 0px 0px 10px',
+  width: 42,
+  height: 42,
+  fontSize: 15,
+  fontWeight: 500,
+  textTransform: 'none',
+  borderColor: '#CED2DC',
+  border: 'solid 1px',
+})
+const MyButtonFilterList = styled(Button) ({
+  borderRadius: '0px 10px 10px 0px',
+  width: 42,
+  height: 42,
+  fontSize: 15,
+  fontWeight: 500,
+  textTransform: 'none',
+  borderColor: '#CED2DC',
+  border: 'solid 1px',
 })
 
 
@@ -165,6 +189,14 @@ export const MainPageContainer = React.memo(({}) => {
 
           </div>
           <div>
+            <MyButtonFilterBlock>
+              <BlockIcon/>
+            </MyButtonFilterBlock>
+            <MyButtonFilterList>
+              <ListIcon/>
+            </MyButtonFilterList>
+          </div>
+          <div>
             <MyButton className={styles.menuList_obj} aria-controls="basic-obj" aria-haspopup="true" onClick={handleClicks}>
               Показать
             </MyButton>
@@ -193,7 +225,6 @@ export const MainPageContainer = React.memo(({}) => {
                 />
               </MenuItem>
             </Menu>
-
           </div>
         </div>
       </div>
