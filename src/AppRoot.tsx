@@ -1,6 +1,6 @@
 import React from 'react'
 //utils
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 //styles
 import styles from '@Scss/app.module.scss'
 import Drawer from '@material-ui/core/Drawer'
@@ -9,6 +9,7 @@ import AppBar from '@material-ui/core/AppBar'
 import { Header } from 'components/navigation/Header'
 import { SideDrawer } from 'components/navigation/SideDrawer'
 import { RouterContent } from 'RouterContent'
+import { Login } from 'components/Pages/Login/Login'
 
 interface IPropsAppRoot {}
 interface IStateAppRoot {
@@ -31,8 +32,9 @@ export class AppRoot extends React.PureComponent<IPropsAppRoot, IStateAppRoot> {
     const { hist } = this.state
     return (
       <Router>
-        <div className={styles.root}>
-          <CssBaseline />
+        <Route path='/' component={Login}></Route>
+        {/* <div className={styles.root}> */}
+          {/* <CssBaseline />
           <AppBar position="fixed" className={styles.appBar}>
             <Header />
           </AppBar>
@@ -48,13 +50,13 @@ export class AppRoot extends React.PureComponent<IPropsAppRoot, IStateAppRoot> {
               hist={hist}
               handleChangeDrawer={this.handleChangeDrawer}
             />
-          </Drawer>
-          <section className={styles.main}>
-            <section className={styles.main__content}>
-              <RouterContent />
-            </section>
-          </section>
-        </div>
+          </Drawer> */}
+          {/* <section className={styles.main}>
+            <section className={styles.main__content}> */}
+              {/* <RouterContent /> */}
+            {/* </section>
+          </section> */}
+        {/* </div> */}
       </Router>
     )
   }

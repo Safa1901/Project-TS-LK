@@ -5,7 +5,6 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import AppBar from '@material-ui/core/AppBar'
 import { Header } from 'components/navigation/Header'
 import { SideDrawer } from 'components/navigation/SideDrawer'
-import { RouterContent } from 'RouterContent'
 
 
 interface IPropsAppRoot {}
@@ -50,11 +49,6 @@ export class Main extends React.PureComponent<IPropsAppRoot, IStateAppRoot> {
                     handleChangeDrawer={this.handleChangeDrawer}
                 />
                 </Drawer>
-                <section className={styles.main}>
-                    <section className={styles.main__content}>
-                        <RouterContent />
-                    </section>
-                </section>
           </div>
         )
     }
