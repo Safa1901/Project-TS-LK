@@ -5,6 +5,9 @@
 html {
   height: 100%;
   /* width: 100%; */
+  background-color: #F8F9FA;
+  font-family: Montserrat, sans-serif !important;
+
 }
 body {
   font-family: Montserrat, sans-serif !important;

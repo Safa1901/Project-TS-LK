@@ -9,6 +9,7 @@
     position: relative;
     top: 200px;
     left: 640px;
+    gap: 1.4px;
   }
   &_logo {
     width: 160px;
@@ -23,11 +24,17 @@
   top: 35px;
   width: 380px;
   height: 295px;
-  // left: 530px;
+  background-color: #FFFFFF;
+  border-radius: 13px;
 
   &_form {
     display: flex;
     flex-direction: column;
-
+  }
+  &_input {
+    border-radius: 1.4px;
+    border-color: #CED2DC;
+    margin: 30px
   }
 }
+
