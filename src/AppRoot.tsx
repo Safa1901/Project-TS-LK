@@ -32,9 +32,9 @@ export class AppRoot extends React.PureComponent<IPropsAppRoot, IStateAppRoot> {
     const { hist } = this.state
     return (
       <Router>
-        <Route path='/' component={Login}></Route>
-        {/* <div className={styles.root}> */}
-          {/* <CssBaseline />
+        {/* <Route path='/' component={Login}></Route> */}
+        <div className={styles.root}>
+          <CssBaseline />
           <AppBar position="fixed" className={styles.appBar}>
             <Header />
           </AppBar>
@@ -50,13 +50,13 @@ export class AppRoot extends React.PureComponent<IPropsAppRoot, IStateAppRoot> {
               hist={hist}
               handleChangeDrawer={this.handleChangeDrawer}
             />
-          </Drawer> */}
-          {/* <section className={styles.main}>
-            <section className={styles.main__content}> */}
-              {/* <RouterContent /> */}
-            {/* </section>
-          </section> */}
-        {/* </div> */}
+          </Drawer>
+          <section className={styles.main}>
+            <section className={styles.main__content}>
+              <RouterContent />
+            </section>
+          </section>
+        </div>
       </Router>
     )
   }

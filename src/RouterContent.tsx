@@ -20,6 +20,7 @@ import { AreasResponsobility } from 'components/Pages/Admin/AreasResponsobility/
 import  { AreasService } from 'components/Pages/Admin/AreasService/AreasService'
 import { CompanyDetails } from 'components/Pages/Admin/CompanyDetails/CompanyDetails'
 import { SendingNotifications } from 'components/Pages/Admin/SendingNotifications/SendingNotifications'
+import { RemovalArragements } from 'components/Pages/Admin/RemovalArrangements/RemovalArragements'
 
 export const RouterContent = () => {
   const Object = {
@@ -144,6 +145,14 @@ export const RouterContent = () => {
         render={() => {
           document.title = 'Отправка уведомлений'
           return <SendingNotifications />
+        }}
+      />
+      <Route
+        exact={true}
+        path="/admin/removalArragements/removalArragements/"
+        render={() => {
+          document.title = 'Постановки/ снятия не по расписанию'
+          return <RemovalArragements />
         }}
       />
       <Route

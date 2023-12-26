@@ -44,7 +44,7 @@
           font-weight: 500;
           font-size: 14px;
           line-height: 17.07px;
-          margin: 15px 0px;
+          // margin: 15px 0px;
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -81,15 +81,15 @@
         }
 
         .listItem {
-          width: 170px;
-          height: 40px;
+          width: 160px;
+          height: 45px;
           cursor: pointer;
           font-weight: 500;
           font-size: 14px;
           line-height: 17.07px;
-          margin: 15px 0px;
+          margin: 10px 0px;
           display: flex;
-          justify-content: space-between;
+          justify-content: center;
           align-items: center;
           background: transparent;
           border: none;

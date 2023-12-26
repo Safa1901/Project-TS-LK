@@ -223,9 +223,19 @@ export const SideDrawer = React.memo(
         url: '/admin/report/notifications',
       },
     ]
+
+    const menuSettings = [
+      {
+        name: '/admin/removalArragements/removalArragements',
+        label: 'Постановки/ снятия не по расписанию',
+        defaultIcon: UserNotifyIcon,
+        warning: false,
+        url: '/admin/removalArragements/removalArragements',
+      }
+    ]
     return (
       <section className={styles.root}>
-        <section className={styles.menuListWrapper}>
+        {/* <section className={styles.menuListWrapper}>
           <section className={styles.listWrapper}>
             <div className={styles.list_admin}>
               <div className={styles.admin_side}>
@@ -324,30 +334,16 @@ export const SideDrawer = React.memo(
                 }
             </div>
           </section>
-        </section>
+        </section> */}
         <section className={styles.menuListWrapper}>
           <section className={styles.listWrapper}>
-            <button
-              className={styles.listHeader}
-              onClick={() => toggleExpandMenu(!expandAdminMenu)}
-            >
-              <span>Администрирование</span>
-              &nbsp; &nbsp;
-              <span
-                className={clsx({
-                  [styles.listHeader__rotate]: expandAdminMenu,
-                })}
-              >
-                <AdminArrowMenuIcon />
-              </span>
-            </button>
             <div className={styles.list}>
-              {expandAdminMenu &&
+              {
                 menuListAdmin &&
                 menuListAdmin.map((item, index) => {
                   const selected = hist === item.url
                   return (
-                    <button
+                    <MyButton
                       key={index}
                       className={clsx({
                         [styles.listItem]: true,
@@ -367,9 +363,55 @@ export const SideDrawer = React.memo(
                         {item.label}
                       </div>
                       <div>{item.warning && warningIcon}</div>
-                    </button>
+                    </MyButton>
                   )
                 })}
+            </div>
+            <div className={styles.list}>
+
+              <button
+                className={styles.listHeader}
+                onClick={() => toggleExpandMenu(!expandAdminMenu)}
+              >
+                <span>Администрирование</span>
+                &nbsp; &nbsp;
+                <span
+                  className={clsx({
+                    [styles.listHeader__rotate]: expandAdminMenu,
+                  })}
+                >
+                  <AdminArrowMenuIcon />
+                </span>
+              </button>
+              {expandAdminMenu &&
+                menuSettings &&
+                menuSettings.map((item, index) => {
+                  const selected = hist === item.url
+                  return (
+                    <MyButton
+                      key={index}
+                      className={clsx({
+                        [styles.listItem]: true,
+                        [styles.listItemActive]: selected,
+                      })}
+                      onClick={() => {
+                        history.push(item.url)
+                        return handleChangeDrawer(item.url)
+                      }}
+                    >
+                      <div
+                        className={clsx({
+                          [styles.listItemRootTextAdmin]: true,
+                          [styles.listItemTextActive]: selected,
+                        })}
+                      >
+                        {item.label}
+                      </div>
+                      <div>{item.warning && warningIcon}</div>
+                    </MyButton>
+                  )
+                })
+              }
             </div>
           </section>
         </section>
