@@ -4,12 +4,13 @@
   font-family: Montserrat;
   text-transform: none;
   // left: -($mobile-width + 30);
-  // width: 100%;
+
   .menuListWrapper {
     display: flex;
     justify-content: flex-end;
     margin-top: 69px;
     margin-right: 15px;
+    height: 100%;
     .listWrapper {
       width: 60%;
       .listHeader {

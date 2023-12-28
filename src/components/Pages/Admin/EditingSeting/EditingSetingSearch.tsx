@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 )
 
-export const RemovalArragementsSearch = () => {
+export const EditingSetingSearch = () => {
     const classes = useStyles();
 
     return (

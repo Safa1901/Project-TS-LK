@@ -226,11 +226,25 @@ export const SideDrawer = React.memo(
 
     const menuSettings = [
       {
-        name: '/admin/removalArragements/removalArragements',
-        label: 'Постановки/ снятия не по расписанию',
+        name: '/admin/editingSeting/editingSeting',
+        label: 'Постановки',
         defaultIcon: UserNotifyIcon,
         warning: false,
-        url: '/admin/removalArragements/removalArragements',
+        url: '/admin/editingSeting/editingSeting',
+      },
+      {
+        name: '/admin/personalAccount/personalAccount',
+        label: 'Лицевые счета',
+        defaultIcon: UserNotifyIcon,
+        warning: false,
+        url: '/admin/personalAccount/personalAccount',
+      },
+      {
+        name: '/admin/editingAccessSeting/editingAccessSeting',
+        label: 'Удаленные постановки снятия',
+        defaultIcon: UserNotifyIcon,
+        warning: false,
+        url: '/admin/editingAccessSeting/editingAccessSeting',
       }
     ]
     return (
@@ -373,7 +387,7 @@ export const SideDrawer = React.memo(
                 className={styles.listHeader}
                 onClick={() => toggleExpandMenu(!expandAdminMenu)}
               >
-                <span>Администрирование</span>
+                <span>Настройки</span>
                 &nbsp; &nbsp;
                 <span
                   className={clsx({

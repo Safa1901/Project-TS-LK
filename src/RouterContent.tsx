@@ -20,7 +20,9 @@ import { AreasResponsobility } from 'components/Pages/Admin/AreasResponsobility/
 import  { AreasService } from 'components/Pages/Admin/AreasService/AreasService'
 import { CompanyDetails } from 'components/Pages/Admin/CompanyDetails/CompanyDetails'
 import { SendingNotifications } from 'components/Pages/Admin/SendingNotifications/SendingNotifications'
-import { RemovalArragements } from 'components/Pages/Admin/RemovalArrangements/RemovalArragements'
+import { EditingSeting } from 'components/Pages/Admin/EditingSeting/EditingSeting'
+import { PersonalAccount } from 'components/Pages/Admin/PersonalAccount/PersonalAccount'
+import { EditingAccessSettings } from 'components/Pages/Admin/EditingAccessSettings/EditingAccessSettings'
 
 export const RouterContent = () => {
   const Object = {
@@ -149,10 +151,26 @@ export const RouterContent = () => {
       />
       <Route
         exact={true}
-        path="/admin/removalArragements/removalArragements/"
+        path="/admin/editingSeting/editingSeting/"
         render={() => {
           document.title = 'Постановки/ снятия не по расписанию'
-          return <RemovalArragements />
+          return <EditingSeting />
+        }}
+      />
+      <Route
+        exact={true}
+        path="/admin/personalAccount/personalAccount/"
+        render={() => {
+          document.title = 'Лицевые счета'
+          return <PersonalAccount />
+        }}
+      />
+      <Route
+        exact={true}
+        path="/admin/editingAccessSeting/editingAccessSeting/"
+        render={() => {
+          document.title = 'Удаленные постановки снятия'
+          return <EditingAccessSettings />
         }}
       />
       <Route

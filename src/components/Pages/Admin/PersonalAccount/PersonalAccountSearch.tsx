@@ -1,7 +1,8 @@
 import React from "react";
 
-import TextField from '@material-ui/core/TextField';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+
+import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 const currencies = [
@@ -43,12 +44,13 @@ const currencies = [
     },
 ];
 
+
 const useStyles = makeStyles((theme: Theme) => 
     createStyles({
         root: {
             '& > *': {
                 margin: theme.spacing(1),
-                width: '35ch',
+                width: '25ch',
             },
         },
         btn: {
@@ -58,17 +60,12 @@ const useStyles = makeStyles((theme: Theme) =>
             borderColor: '#CED2DC',
             border: 'solid 1px',
         },
-        adress: {
-            width: '55ch'
-        }
-
+        
     })
 )
 
-
-export const ObjectNevaOnlainSerch = () => {
+export const PersonalAccountSearch = () => {
     const classes = useStyles();
-
     const [currency, setCurrency] = React.useState('Феникс Краснодар');
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCurrency(event.target.value);
@@ -77,9 +74,7 @@ export const ObjectNevaOnlainSerch = () => {
     return (
         <div>
             <form className={classes.root} noValidate autoComplete="off">
-                <TextField size="small" id="outlined-basic" label="№ объекта" variant="outlined" />
-                <TextField className={classes.adress} size="small"  id="outlined-basic" label="Адрес или называние" variant="outlined" />
-                <TextField size="small"  id="outlined-basic" label="Номер телофона" variant="outlined" />
+                <TextField size="small"  id="outlined-basic" label="№ объекта" variant="outlined" />
                 <TextField
                     id="outlined-select-currency-native"
                     size="small" 

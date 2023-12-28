@@ -97,7 +97,7 @@ const rows = [
   createData(14918, 1, 'Тестовый объект ХБ Нева Тестовая КТС - не реагируем! Тест', 'Краснодар ул Пашковская 74', 'Адамов Александр Яковлевич', 928083424 , ' ', 'push'),
 ];
 
-export const RemovalArragementsTable = () => {
+export const EditingSetingTable = () => {
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
