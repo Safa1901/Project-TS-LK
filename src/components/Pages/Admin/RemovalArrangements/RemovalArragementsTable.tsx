@@ -117,6 +117,11 @@ export const RemovalArragementsTable = () => {
     setChecked(event.target.checked);
   };
 
+  // const handleClickSelect = (action) => {
+  //   action = +(action === 'select')
+  //   const typeChange = {active: action}
+  // }
+
   return (
       <div>
         <TableContainer>
@@ -144,11 +149,9 @@ export const RemovalArragementsTable = () => {
                                 {row.object}
                             </TableCell>
                             <TableCell align="left">{row.group}</TableCell>
-                            <TableCell align="left">{row.name}</TableCell>
-                            <TableCell align="left">{row.adress}</TableCell>
-                            <TableCell align="left">{row.responsible}</TableCell>
-                            <TableCell align="left">{row.phone}</TableCell>
                             <TableCell align="left">{row.zone}</TableCell>
+                            <TableCell align="left">{row.phone}</TableCell>
+                            <TableCell align="left">{row.name}</TableCell>
                             <TableCell align="left">
                                 <FormControl>
                                     <Checkbox
@@ -157,6 +160,47 @@ export const RemovalArragementsTable = () => {
                                         inputProps={{ 'aria-label': 'primary checkbox' }}
                                     />
                                 </FormControl>
+                            </TableCell>
+                            <TableCell align="left">
+                                <FormControl>
+                                    <Checkbox
+                                        checked={checked}
+                                        onChange={handleChangeCheck}
+                                        inputProps={{ 'aria-label': 'primary checkbox' }}
+                                    />
+                                </FormControl>
+                            </TableCell>
+                            <TableCell align="left">
+                                <FormControl>
+                                    <Checkbox
+                                        checked={checked}
+                                        onChange={handleChangeCheck}
+                                        inputProps={{ 'aria-label': 'primary checkbox' }}
+                                    />
+                                </FormControl>
+                            </TableCell>
+                            <TableCell align="left">
+                                <FormControl>
+                                    <Checkbox
+                                        checked={checked}
+                                        onChange={handleChangeCheck}
+                                        inputProps={{ 'aria-label': 'primary checkbox' }}
+                                    />
+                                </FormControl>
+                            </TableCell>
+                            <TableCell>
+                              <button 
+                                // onClick={() => handleClickSelect('remove')}
+                              >
+                                Снять все
+                              </button>
+                            </TableCell>
+                            <TableCell>
+                              <button 
+                                // onClick={() => handleClickSelect('remove')}
+                              >
+                                Выбрать все
+                              </button>
                             </TableCell>
                         </TableRow>
                     ))}
