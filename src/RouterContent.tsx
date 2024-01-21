@@ -23,6 +23,7 @@ import { SendingNotifications } from 'components/Pages/Admin/SendingNotification
 import { EditingSeting } from 'components/Pages/Admin/EditingSeting/EditingSeting'
 import { PersonalAccount } from 'components/Pages/Admin/PersonalAccount/PersonalAccount'
 import { EditingAccessSettings } from 'components/Pages/Admin/EditingAccessSettings/EditingAccessSettings'
+import { Power } from 'components/Pages/Admin/Reports/Power/Power'
 
 export const RouterContent = () => {
   const Object = {
@@ -171,6 +172,14 @@ export const RouterContent = () => {
         render={() => {
           document.title = 'Удаленные постановки снятия'
           return <EditingAccessSettings />
+        }}
+      />
+      <Route
+        exact={true}
+        path="/admin/report/power/"
+        render={() => {
+          document.title = 'Отчеты электропитания'
+          return <Power />
         }}
       />
       <Route

@@ -60,6 +60,7 @@ export const SideDrawer = React.memo(
   }: IProps) => {
     const history = useHistory()
     const [expandAdminMenu, toggleExpandMenu] = React.useState<boolean>(false)
+    const [expandMenuReport, toggleMenuReport] = React.useState<boolean>(false)
     const [supportMenu, toggleSupportMenu] = React.useState<boolean>(false)
     //==
     const warningIcon = <WarningBall />
@@ -208,19 +209,50 @@ export const SideDrawer = React.memo(
         warning: false,
         url: '/admin/sendingNotifications/sendingNotifications',
       },
+      // {
+      //   name: '/admin/report/notifications',
+      //   label: 'Отчеты',
+      //   defaultIcon: UserNotifyIcon,
+      //   warning: false,
+      //   url: '/admin/report/notifications',
+      // },
+      // {
+      //   name: '/admin/report/notifications',
+      //   label: 'Настройки',
+      //   defaultIcon: UserNotifyIcon,
+      //   warning: false,
+      //   url: '/admin/report/notifications',
+      // },
+    ]
+
+    const menuReport = [
       {
-        name: '/admin/report/notifications',
-        label: 'Отчеты',
+        name: '/admin/report/gbr',
+        label: 'Отчеты ГБР',
         defaultIcon: UserNotifyIcon,
         warning: false,
-        url: '/admin/report/notifications',
+        url: '/admin/report/gbr',
       },
       {
-        name: '/admin/report/notifications',
-        label: 'Настройки',
+        name: '/admin/report/power',
+        label: 'Отчеты электропитания',
         defaultIcon: UserNotifyIcon,
         warning: false,
-        url: '/admin/report/notifications',
+        url: '/admin/report/power',
+      },
+      {
+        name: '/admin/report/alarm',
+        label: 'Отчеты по событиям',
+        defaultIcon: UserNotifyIcon,
+        warning: false,
+        url: '/admin/report/alarm',
+      },
+      {
+        name: '/admin/report/service-reports',
+        label: 'Отчеты по сервису',
+        defaultIcon: UserNotifyIcon,
+        warning: false,
+        url: '/admin/report/service-reports',
       },
     ]
 
@@ -381,8 +413,56 @@ export const SideDrawer = React.memo(
                   )
                 })}
             </div>
-            <div className={styles.list}>
 
+
+            <div className={styles.list}>
+              <button
+                className={styles.listHeader}
+                onClick={() => toggleMenuReport(!expandMenuReport)}
+              >
+                <span>Отчеты</span>
+                &nbsp; &nbsp;
+                <span
+                  className={clsx({
+                    [styles.listHeader__rotate]: expandMenuReport,
+                  })}
+                >
+                  <AdminArrowMenuIcon />
+                </span>
+              </button>
+              {expandMenuReport &&
+                menuReport &&
+                menuReport.map((item, index) => {
+                  const selected = hist === item.url
+                  return (
+                    <MyButton
+                      key={index}
+                      className={clsx({
+                        [styles.listItem]: true,
+                        [styles.listItemActive]: selected,
+                      })}
+                      onClick={() => {
+                        history.push(item.url)
+                        return handleChangeDrawer(item.url)
+                      }}
+                    >
+                      <div
+                        className={clsx({
+                          [styles.listItemRootTextAdmin]: true,
+                          [styles.listItemTextActive]: selected,
+                        })}
+                      >
+                        {item.label}
+                      </div>
+                      <div>{item.warning && warningIcon}</div>
+                    </MyButton>
+                  )
+                })
+              }
+            </div>
+
+
+            <div className={styles.list}>
               <button
                 className={styles.listHeader}
                 onClick={() => toggleExpandMenu(!expandAdminMenu)}
