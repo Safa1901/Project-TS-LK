@@ -8,6 +8,8 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { styled  } from '@material-ui/core/styles';
 import styles from './styles/container.module.scss'
+import Checkbox from '@material-ui/core/Checkbox';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 
 const MyButton = styled(Button) ({
@@ -27,6 +29,11 @@ const MyButton = styled(Button) ({
 
 export default function SendingNotificationsForm() {
   const [openRegion, setOpenRegion] = React.useState(false);
+  const [checked, setChecked] = React.useState(false);
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setChecked(event.target.checked);
+  };
 
   const handleClickOpen = () => {
     setOpenRegion(true);
@@ -77,7 +84,19 @@ export default function SendingNotificationsForm() {
             fullWidth
           />
         </DialogContent>
-       
+       <DialogContent>
+        <FormControlLabel
+          control={
+            <Checkbox
+              checked={checked}
+              onChange={handleChange}
+              name="checkedB"
+              color="primary"
+            />
+          }
+          label="Отправить всем пользователям"
+        />
+       </DialogContent>
         <DialogActions>
           <MyButton onClick={handleClose}>
             Отправить
