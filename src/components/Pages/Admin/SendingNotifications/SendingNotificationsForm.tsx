@@ -42,14 +42,27 @@ export default function SendingNotificationsForm() {
         Добавить реквизит
       </MyButton>
 
-      <Dialog open={openRegion} onClose={handleClose} aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title">Добавить реквизит</DialogTitle>
+      <Dialog 
+        open={openRegion} 
+        onClose={handleClose}
+      >
+        <DialogTitle id="form-dialog-title">Название</DialogTitle>
         <DialogContent>
           <TextField
             autoFocus
             margin="dense"
             id="name"
-            label="Префикс"
+            label="Название"
+            type="email"
+            fullWidth
+          />
+        </DialogContent>
+        <DialogContent>
+          <TextField
+            autoFocus
+            margin="dense"
+            id="text"
+            label="Текст уведомления:"
             type="email"
             fullWidth
           />
@@ -59,47 +72,17 @@ export default function SendingNotificationsForm() {
             autoFocus
             margin="dense"
             id="name"
-            label="Название компании"
+            label="Номера телефонов (каждый с новой строки):"
             type="email"
             fullWidth
           />
         </DialogContent>
-        <DialogContent>
-          <TextField
-            autoFocus
-            margin="dense"
-            id="name"
-            label="ИНН"
-            type="email"
-            fullWidth
-          />
-        </DialogContent>
-        <DialogContent>
-          <TextField
-            autoFocus
-            margin="dense"
-            id="name"
-            label="КПП"
-            type="email"
-            fullWidth
-          />
-        </DialogContent>
-        <DialogContent>
-          <TextField
-            autoFocus
-            margin="dense"
-            id="name"
-            type="email"
-            fullWidth
-          />
-        </DialogContent>
+       
         <DialogActions>
           <MyButton onClick={handleClose}>
-            Добавить
+            Отправить
           </MyButton>
-          <MyButton onClick={handleClose}>
-            Закрыть
-          </MyButton>
+          <MyButton type="submit">Subscribe</MyButton>
         </DialogActions>
       </Dialog>
     </div>

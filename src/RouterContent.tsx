@@ -24,6 +24,7 @@ import { EditingSeting } from 'components/Pages/Admin/EditingSeting/EditingSetin
 import { PersonalAccount } from 'components/Pages/Admin/PersonalAccount/PersonalAccount'
 import { EditingAccessSettings } from 'components/Pages/Admin/EditingAccessSettings/EditingAccessSettings'
 import { Power } from 'components/Pages/Admin/Reports/Power/Power'
+import { Users } from 'components/Pages/Admin/Users/Users'
 
 export const RouterContent = () => {
   const Object = {
@@ -180,6 +181,14 @@ export const RouterContent = () => {
         render={() => {
           document.title = 'Отчеты электропитания'
           return <Power />
+        }}
+      />
+      <Route
+        exact={true}
+        path="/admin/users/users"
+        render={() => {
+          document.title = 'Пользователи'
+          return <Users />
         }}
       />
       <Route

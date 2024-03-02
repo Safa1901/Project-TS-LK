@@ -174,13 +174,13 @@ export const SideDrawer = React.memo(
         warning: false,
         url: '/admin/areas/areas',
       },
-      // {
-      //   name: '/admin/report/notifications',
-      //   label: 'Зона ответственности',
-      //   defaultIcon: UserNotifyIcon,
-      //   warning: false,
-      //   url: '/admin/report/notifications',
-      // },
+      {
+        name: '/admin/users/users',
+        label: 'Пользователи',
+        defaultIcon: UserNotifyIcon,
+        warning: false,
+        url: '/admin/users/users',
+      },
       {
         name: '/admin/report/notifications',
         label: 'Журнал изменений Дата',
