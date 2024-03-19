@@ -209,6 +209,13 @@ export const SideDrawer = React.memo(
         warning: false,
         url: '/admin/sendingNotifications/sendingNotifications',
       },
+      {
+        name: '/admin/services/services',
+        label: 'Список услуг',
+        defaultIcon: UserNotifyIcon,
+        warning: false,
+        url: '/admin/services/services',
+      },
       // {
       //   name: '/admin/report/notifications',
       //   label: 'Отчеты',
@@ -277,7 +284,42 @@ export const SideDrawer = React.memo(
         defaultIcon: UserNotifyIcon,
         warning: false,
         url: '/admin/editingAccessSeting/editingAccessSeting',
-      }
+      },
+      {
+        name: '/admin/notificationType/notificationType',
+        label: 'Типы уведомлений',
+        defaultIcon: UserNotifyIcon,
+        warning: false,
+        url: '/admin/notificationType/notificationType',
+      },
+      {
+        name: '/admin/kts/kts',
+        label: 'Виртуальная КТС',
+        defaultIcon: UserNotifyIcon,
+        warning: false,
+        url: '/admin/kts/kts',
+      },
+      {
+        name: '/admin/users-aministrator/users-aministrator',
+        label: 'Администратор пользователя',
+        defaultIcon: UserNotifyIcon,
+        warning: false,
+        url: '/admin/users-aministrator/users-aministrator',
+      },
+      {
+        name: '/admin/settings-events/settings-events',
+        label: 'Экспорт событий',
+        defaultIcon: UserNotifyIcon,
+        warning: false,
+        url: '/admin/settings-events/settings-events',
+      },
+      {
+        name: '/admin/black-list/black-list',
+        label: 'Звонки не по расписанию',
+        defaultIcon: UserNotifyIcon,
+        warning: false,
+        url: '/admin/black-list/black-list',
+      },
     ]
     return (
       <section className={styles.root}>

@@ -25,7 +25,7 @@ const AntTab = withStyles((theme: Theme) =>
       padding: 0,
       textTransform: 'none',
       minWidth: 72,
-      fontWeight: theme.typography.fontWeightRegular,
+      // fontWeight: theme.typography.fontWeightRegular,
       marginRight: 40,
       fontFamily: ['"Segoe UI"', 'Arial', 'sans-serif'].join(','),
       '&:hover': {

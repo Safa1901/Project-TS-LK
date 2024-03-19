@@ -1,15 +1,24 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-// import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import { styled  } from '@material-ui/core/styles';
+// import TextField from '@material-ui/core/TextField';
+// import Dialog from '@material-ui/core/Dialog';
+// import DialogActions from '@material-ui/core/DialogActions';
+// import DialogContent from '@material-ui/core/DialogContent';
+// // import DialogContentText from '@material-ui/core/DialogContentText';
+// import DialogTitle from '@material-ui/core/DialogTitle';
+// import Checkbox from '@material-ui/core/Checkbox';
+// import FormControlLabel from '@material-ui/core/FormControlLabel';
+
+import Card from '@mui/material/Card';
+import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+
+//стили
 import styles from './styles/container.module.scss'
-import Checkbox from '@material-ui/core/Checkbox';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
+import { styled  } from '@material-ui/core/styles';
 
 
 const MyButton = styled(Button) ({
@@ -45,7 +54,59 @@ export default function SendingNotificationsForm() {
 
   return (
     <div className={styles.modalSection}>
-      <MyButton variant="outlined" onClick={handleClickOpen}>
+
+
+    <Card variant="outlined" sx={{ maxWidth: 500 }}>
+      <Box sx={{ p: 2 }}>
+        {/* <Stack direction="row" justifyContent="space-between" alignItems="center">
+          <Typography gutterBottom variant="h5" component="div">
+            Toothbrush
+          </Typography>
+          <Typography gutterBottom variant="h6" component="div">
+            $4.50
+          </Typography>
+        </Stack>
+        <Typography color="text.secondary" variant="body2">
+          Pinstriped cornflower blue cotton blouse takes you on a walk to the park or
+          just down the hall.
+        </Typography> */}
+        <TextField
+          autoFocus
+          required
+          margin="dense"
+          id="name"
+          name="email"
+          label="Название"
+          type="email"
+          fullWidth
+          // variant="standard"
+        />
+        <TextField
+          id="outlined-textarea"
+          label="Текст уведомления:"
+          // placeholder="Placeholder"
+          multiline
+          fullWidth
+          margin="dense"
+        />
+        <TextField
+          id="outlined-textarea"
+          label="Номера телефонов (каждый с новой строки):"
+          // placeholder="Placeholder"
+          multiline
+          fullWidth
+          margin="dense"
+        />
+        <FormControlLabel required control={<Checkbox />} label="Отправить всем пользователям" />
+      </Box>
+      <Divider />
+      <Box sx={{ p: 2 }}>
+        <MyButton onClick={handleClose}>
+          Отправить
+        </MyButton>
+      </Box>
+    </Card>
+      {/* <MyButton variant="outlined" onClick={handleClickOpen}>
         Добавить реквизит
       </MyButton>
 
@@ -98,12 +159,8 @@ export default function SendingNotificationsForm() {
         />
        </DialogContent>
         <DialogActions>
-          <MyButton onClick={handleClose}>
-            Отправить
-          </MyButton>
-          <MyButton type="submit">Subscribe</MyButton>
         </DialogActions>
-      </Dialog>
+      </Dialog> */}
     </div>
   );
 }
