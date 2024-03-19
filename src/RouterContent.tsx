@@ -24,7 +24,13 @@ import { EditingSeting } from 'components/Pages/Admin/EditingSeting/EditingSetin
 import { PersonalAccount } from 'components/Pages/Admin/PersonalAccount/PersonalAccount'
 import { EditingAccessSettings } from 'components/Pages/Admin/EditingAccessSettings/EditingAccessSettings'
 import { Power } from 'components/Pages/Admin/Reports/Power/Power'
-import { Users } from 'components/Pages/Admin/Users/Users'
+import { Users } from 'components/Pages/Admin/Users/Users';
+import { NotificationType } from 'components/Pages/Admin/NotificationType/NotificationType';
+import { Services } from 'components/Pages/Admin/Services/Services';
+import { KTS } from 'components/Pages/Admin/kts/KTS';
+import { UsersAdministrator } from 'components/Pages/Admin/UsersAdministrator/UsersAdministrator'
+import { SettingsEvents } from 'components/Pages/Admin/SettingsEvents/SettingsEvents'
+import { BlackList } from 'components/Pages/Admin/BlackList/BlackList'
 
 export const RouterContent = () => {
   const Object = {
@@ -189,6 +195,54 @@ export const RouterContent = () => {
         render={() => {
           document.title = 'Пользователи'
           return <Users />
+        }}
+      />
+      <Route
+        exact={true}
+        path="/admin/notificationType/notificationType"
+        render={() => {
+          document.title = 'Типы уведомлений'
+          return <NotificationType />
+        }}
+      />
+      <Route
+        exact={true}
+        path="/admin/services/services"
+        render={() => {
+          document.title = 'Список услуг'
+          return <Services />
+        }}
+      />
+      <Route
+        exact={true}
+        path="/admin/kts/kts"
+        render={() => {
+          document.title = 'Виртуальная КТС'
+          return <KTS />
+        }}
+      />
+      <Route
+        exact={true}
+        path="/admin/users-aministrator/users-aministrator"
+        render={() => {
+          document.title = 'Администратор пользователя'
+          return <UsersAdministrator />
+        }}
+      />
+      <Route
+        exact={true}
+        path="/admin/settings-events/settings-events"
+        render={() => {
+          document.title = 'Экспорт событий'
+          return <SettingsEvents />
+        }}
+      />
+      <Route
+        exact={true}
+        path="/admin/black-list/black-list"
+        render={() => {
+          document.title = 'Звонки не по расписанию'
+          return <BlackList />
         }}
       />
       <Route
