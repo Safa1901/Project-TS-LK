@@ -31,6 +31,7 @@ import { KTS } from 'components/Pages/Admin/kts/KTS';
 import { UsersAdministrator } from 'components/Pages/Admin/UsersAdministrator/UsersAdministrator'
 import { SettingsEvents } from 'components/Pages/Admin/SettingsEvents/SettingsEvents'
 import { BlackList } from 'components/Pages/Admin/BlackList/BlackList'
+import { Journal } from 'components/Pages/Admin/Journal/Journal'
 
 export const RouterContent = () => {
   const Object = {
@@ -243,6 +244,14 @@ export const RouterContent = () => {
         render={() => {
           document.title = 'Звонки не по расписанию'
           return <BlackList />
+        }}
+      />
+      <Route
+        exact={true}
+        path="/admin/journal/journal"
+        render={() => {
+          document.title = 'Журнал последних изменений'
+          return <Journal />
         }}
       />
       <Route

@@ -1,6 +1,6 @@
 import React from "react";
 //styles
-import styles from './styles/container.module.scss'
+import styles from '../../styles/container.module.scss'
 //pages
 import { PowerSerch } from "./PowerSearch";
 import { PowerTable } from "./PowerTable";

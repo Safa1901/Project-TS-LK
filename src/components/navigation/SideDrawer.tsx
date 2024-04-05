@@ -182,11 +182,11 @@ export const SideDrawer = React.memo(
         url: '/admin/users/users',
       },
       {
-        name: '/admin/report/notifications',
-        label: 'Журнал изменений Дата',
+        name: '/admin/journal/journal',
+        label: 'Журнал изменений',
         defaultIcon: UserNotifyIcon,
         warning: false,
-        url: '/admin/report/notifications',
+        url: '/admin/journal/journal',
       },
       {
         name: '/admin/areasService/areasService',

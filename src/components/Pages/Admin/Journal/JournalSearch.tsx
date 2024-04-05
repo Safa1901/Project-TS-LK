@@ -41,15 +41,60 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 )
 
-export const NotificationSearch = () => {
+const currencies = [
+    {
+        value: 'Изменен тип уведомления',
+        label: 'Изменен тип уведомления'
+    },
+    {
+        value: 'Изменена зона ответственности для объекта',
+        label: 'Изменена зона ответственности для объекта'
+    },
+    {
+        value: 'Изменена КТС',
+        label: 'Изменена КТС'
+    },
+    {
+        value: 'Нажатие КТС',
+        label: 'Нажатие КТС'
+    },
+]
+
+export const JournalSearch = () => {
     const classes = useStyles();
     const [locale, setLocale] = React.useState<LocaleKey>('ru');
+    const [currency, setCurrency] = React.useState('');
+
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setCurrency(event.target.value);
+    };
 
     return (
         <div>
             <form noValidate autoComplete="off">
                 <TextField className={classes.root} size="small" id="outlined-basic" label="№ объекта" variant="outlined" />
                 <TextField className={classes.root} size="small" id="outlined-basic" label="Телофон" variant="outlined" />
+                <TextField
+                    className={classes.root2}
+                    id="outlined-select-currency-native"
+                    size="small" 
+                    select
+                    label="Выберете тип действия"
+                    // defaultValue={''}
+                    value={currency}
+                    onChange={handleChange}
+                    SelectProps={{
+                        native: true,
+                    }}
+                    variant="outlined"
+                    >
+                    {currencies.map((option) => (
+                        <option key={option.value} value={option.value}>
+                            {option.label}
+                        </option>
+                    ))}
+                </TextField>
                 <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale={locale} >
                     <DatePicker className={classes.root2}/>
                     <DatePicker className={classes.root2} />
