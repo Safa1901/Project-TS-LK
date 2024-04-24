@@ -140,11 +140,11 @@ export const SideDrawer = React.memo(
         url: '/admin/object/objects/',
       },
       {
-        name: '/admin/users',
+        name: '/admin/objects/all',
         label: 'Объекты',
         defaultIcon: null,
         warning: false,
-        url: '/admin/users',
+        url: '/admin/objects/all',
       },
       {
         name: '/admin/pults/pults',
@@ -216,6 +216,13 @@ export const SideDrawer = React.memo(
         warning: false,
         url: '/admin/services/services',
       },
+      // {
+      //   name: '/admin/objects/objects',
+      //   label: 'Объекты НеваОнлайн',
+      //   defaultIcon: UserNotifyIcon,
+      //   warning: false,
+      //   url: '/admin/objects/objects',
+      // },
       // {
       //   name: '/admin/report/notifications',
       //   label: 'Отчеты',
