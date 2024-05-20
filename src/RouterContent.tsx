@@ -32,6 +32,7 @@ import { UsersAdministrator } from 'components/Pages/Admin/UsersAdministrator/Us
 import { SettingsEvents } from 'components/Pages/Admin/SettingsEvents/SettingsEvents'
 import { BlackList } from 'components/Pages/Admin/BlackList/BlackList'
 import { Journal } from 'components/Pages/Admin/Journal/Journal'
+import { Report } from 'components/Pages/Report/Report'
 
 export const RouterContent = () => {
   const Object = {
@@ -76,6 +77,14 @@ export const RouterContent = () => {
         render={() => {
           document.title = 'Оплата услуг'
           return <PaymentContainer />
+        }}
+      />
+      <Route
+        exact={true}
+        path="/report"
+        render={() => {
+          document.title = 'Отчеты'
+          return <Report />
         }}
       />
       <Route

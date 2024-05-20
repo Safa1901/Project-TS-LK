@@ -80,11 +80,11 @@ export const SideDrawer = React.memo(
         url: '/payment',
       },
       {
-        name: '/documents',
+        name: '/report',
         label: 'Отчеты',
         defaultIcon: DocumentIcon,
         warning: false,
-        url: '/documents',
+        url: '/report',
       },
       // {
       //   name: '/events',
@@ -330,7 +330,7 @@ export const SideDrawer = React.memo(
     ]
     return (
       <section className={styles.root}>
-        {/* <section className={styles.menuListWrapper}>
+        <section className={styles.menuListWrapper}>
           <section className={styles.listWrapper}>
             <div className={styles.list_admin}>
               <div className={styles.admin_side}>
@@ -429,7 +429,7 @@ export const SideDrawer = React.memo(
                 }
             </div>
           </section>
-        </section> */}
+        </section>
         <section className={styles.menuListWrapper}>
           <section className={styles.listWrapper}>
             <div className={styles.list}>
