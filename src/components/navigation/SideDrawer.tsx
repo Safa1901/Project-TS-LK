@@ -13,6 +13,9 @@ import { useHistory } from 'react-router-dom'
 import { AdminArrowMenuIcon } from '@Files/icons';
 import Button from '@material-ui/core/Button';
 import { styled  } from '@material-ui/core/styles';
+import Link from '@mui/material/Link';
+import Box from '@mui/material/Box';
+
 // import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 
 const MyButton = styled(Button) ({
@@ -337,8 +340,14 @@ export const SideDrawer = React.memo(
                 {adminAdd.map((item, idx) => (
                     <div key={idx}>
                       <p className={styles.admin_side_info}>Ваш администратор: <br/>{item.name}</p>
-                      <p className={styles.admin_side_info}>{item.phone}</p>
-                      <p className={styles.admin_side_info}>{item.email}</p>
+                      {/* <div className={styles.admin_side_info}></div> */}
+                      <Box
+                        display='grid'
+                        alignItems='center'
+                      >
+                        <Link href='#' underline="always" >{item.phone}</Link>
+                        <Link href='#' underline="always" className={styles.admin_side_info}>{item.email}</Link>
+                      </Box>
                     </div>
                     
 

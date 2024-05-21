@@ -245,11 +245,11 @@ export const ObjectsCard = () => {
                             </TableContainer>
                         </DialogActions>
                         <DialogActions>
-                            <ButtonNew 
+                            {/* <ButtonNew 
                                 text="Закрыть"
                                 onClick={handleClose}>
                                 
-                            </ButtonNew>
+                            </ButtonNew> */}
                         </DialogActions>
                     </Dialog>
                 </CardActions>

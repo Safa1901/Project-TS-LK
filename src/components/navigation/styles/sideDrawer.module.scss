@@ -131,8 +131,11 @@
           // text-align: justify;
           
           .admin_side_info {
-            margin: 5px;
+            // margin: 5px;
             white-space: nowrap;
+            :last-child {
+              margin-left: 20px;
+            }
           }
         }
       }
