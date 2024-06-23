@@ -127,210 +127,210 @@ export const SideDrawer = React.memo(
       url: '/questions',
     }
   ]
-    const menuListAdmin = [
-      {
-        name: '/admin/notifications/notifications',
-        label: 'Уведомления пользователей Дата',
-        defaultIcon: null,
-        warning: false,
-        url: '/admin/notifications/notifications',
-      },
-      {
-        name: '/admin/object/objects/',
-        label: 'Объекты НеваОнлайн',
-        defaultIcon: null,
-        warning: false,
-        url: '/admin/object/objects/',
-      },
-      {
-        name: '/admin/objects/all',
-        label: 'Объекты',
-        defaultIcon: null,
-        warning: false,
-        url: '/admin/objects/all',
-      },
-      {
-        name: '/admin/pults/pults',
-        label: 'Пульты',
-        defaultIcon: null,
-        warning: false,
-        url: '/admin/pults/pults',
-      },
-      {
-        name: '/admin/payments/payments',
-        label: 'Платежи Дата',
-        defaultIcon: UserNotifyIcon,
-        warning: false,
-        url: '/admin/payments/payments',
-      },
-      {
-        name: '/admin/triggering/triggering',
-        label: 'Сработки ПТК',
-        defaultIcon: UserNotifyIcon,
-        warning: false,
-        url: '/admin/triggering/triggering',
-      },
-      {
-        name: '/admin/areas/areas',
-        label: 'Зоны ответственности',
-        defaultIcon: UserNotifyIcon,
-        warning: false,
-        url: '/admin/areas/areas',
-      },
-      {
-        name: '/admin/users/users',
-        label: 'Пользователи',
-        defaultIcon: UserNotifyIcon,
-        warning: false,
-        url: '/admin/users/users',
-      },
-      {
-        name: '/admin/journal/journal',
-        label: 'Журнал изменений',
-        defaultIcon: UserNotifyIcon,
-        warning: false,
-        url: '/admin/journal/journal',
-      },
-      {
-        name: '/admin/areasService/areasService',
-        label: 'Зона обслуживания',
-        defaultIcon: UserNotifyIcon,
-        warning: false,
-        url: '/admin/areasService/areasService',
-      },
-      {
-        name: '/admin/companyDetails/companyDetails',
-        label: 'Реквизиты компаний',
-        defaultIcon: UserNotifyIcon,
-        warning: false,
-        url: '/admin/companyDetails/companyDetails',
-      },
-      {
-        name: '/admin/sendingNotifications/sendingNotifications',
-        label: 'Отправка уведомлений Дата',
-        defaultIcon: UserNotifyIcon,
-        warning: false,
-        url: '/admin/sendingNotifications/sendingNotifications',
-      },
-      {
-        name: '/admin/services/services',
-        label: 'Список услуг',
-        defaultIcon: UserNotifyIcon,
-        warning: false,
-        url: '/admin/services/services',
-      },
-      // {
-      //   name: '/admin/objects/objects',
-      //   label: 'Объекты НеваОнлайн',
-      //   defaultIcon: UserNotifyIcon,
-      //   warning: false,
-      //   url: '/admin/objects/objects',
-      // },
-      // {
-      //   name: '/admin/report/notifications',
-      //   label: 'Отчеты',
-      //   defaultIcon: UserNotifyIcon,
-      //   warning: false,
-      //   url: '/admin/report/notifications',
-      // },
-      // {
-      //   name: '/admin/report/notifications',
-      //   label: 'Настройки',
-      //   defaultIcon: UserNotifyIcon,
-      //   warning: false,
-      //   url: '/admin/report/notifications',
-      // },
-    ]
+    // const menuListAdmin = [
+    //   {
+    //     name: '/admin/notifications/notifications',
+    //     label: 'Уведомления пользователей Дата',
+    //     defaultIcon: null,
+    //     warning: false,
+    //     url: '/admin/notifications/notifications',
+    //   },
+    //   {
+    //     name: '/admin/object/objects/',
+    //     label: 'Объекты НеваОнлайн',
+    //     defaultIcon: null,
+    //     warning: false,
+    //     url: '/admin/object/objects/',
+    //   },
+    //   {
+    //     name: '/admin/objects/all',
+    //     label: 'Объекты',
+    //     defaultIcon: null,
+    //     warning: false,
+    //     url: '/admin/objects/all',
+    //   },
+    //   {
+    //     name: '/admin/pults/pults',
+    //     label: 'Пульты',
+    //     defaultIcon: null,
+    //     warning: false,
+    //     url: '/admin/pults/pults',
+    //   },
+    //   {
+    //     name: '/admin/payments/payments',
+    //     label: 'Платежи Дата',
+    //     defaultIcon: UserNotifyIcon,
+    //     warning: false,
+    //     url: '/admin/payments/payments',
+    //   },
+    //   {
+    //     name: '/admin/triggering/triggering',
+    //     label: 'Сработки ПТК',
+    //     defaultIcon: UserNotifyIcon,
+    //     warning: false,
+    //     url: '/admin/triggering/triggering',
+    //   },
+    //   {
+    //     name: '/admin/areas/areas',
+    //     label: 'Зоны ответственности',
+    //     defaultIcon: UserNotifyIcon,
+    //     warning: false,
+    //     url: '/admin/areas/areas',
+    //   },
+    //   {
+    //     name: '/admin/users/users',
+    //     label: 'Пользователи',
+    //     defaultIcon: UserNotifyIcon,
+    //     warning: false,
+    //     url: '/admin/users/users',
+    //   },
+    //   {
+    //     name: '/admin/journal/journal',
+    //     label: 'Журнал изменений',
+    //     defaultIcon: UserNotifyIcon,
+    //     warning: false,
+    //     url: '/admin/journal/journal',
+    //   },
+    //   {
+    //     name: '/admin/areasService/areasService',
+    //     label: 'Зона обслуживания',
+    //     defaultIcon: UserNotifyIcon,
+    //     warning: false,
+    //     url: '/admin/areasService/areasService',
+    //   },
+    //   {
+    //     name: '/admin/companyDetails/companyDetails',
+    //     label: 'Реквизиты компаний',
+    //     defaultIcon: UserNotifyIcon,
+    //     warning: false,
+    //     url: '/admin/companyDetails/companyDetails',
+    //   },
+    //   {
+    //     name: '/admin/sendingNotifications/sendingNotifications',
+    //     label: 'Отправка уведомлений Дата',
+    //     defaultIcon: UserNotifyIcon,
+    //     warning: false,
+    //     url: '/admin/sendingNotifications/sendingNotifications',
+    //   },
+    //   {
+    //     name: '/admin/services/services',
+    //     label: 'Список услуг',
+    //     defaultIcon: UserNotifyIcon,
+    //     warning: false,
+    //     url: '/admin/services/services',
+    //   },
+    //   // {
+    //   //   name: '/admin/objects/objects',
+    //   //   label: 'Объекты НеваОнлайн',
+    //   //   defaultIcon: UserNotifyIcon,
+    //   //   warning: false,
+    //   //   url: '/admin/objects/objects',
+    //   // },
+    //   // {
+    //   //   name: '/admin/report/notifications',
+    //   //   label: 'Отчеты',
+    //   //   defaultIcon: UserNotifyIcon,
+    //   //   warning: false,
+    //   //   url: '/admin/report/notifications',
+    //   // },
+    //   // {
+    //   //   name: '/admin/report/notifications',
+    //   //   label: 'Настройки',
+    //   //   defaultIcon: UserNotifyIcon,
+    //   //   warning: false,
+    //   //   url: '/admin/report/notifications',
+    //   // },
+    // ]
 
-    const menuReport = [
-      {
-        name: '/admin/report/gbr',
-        label: 'Отчеты ГБР',
-        defaultIcon: UserNotifyIcon,
-        warning: false,
-        url: '/admin/report/gbr',
-      },
-      {
-        name: '/admin/report/power',
-        label: 'Отчеты электропитания',
-        defaultIcon: UserNotifyIcon,
-        warning: false,
-        url: '/admin/report/power',
-      },
-      {
-        name: '/admin/report/alarm',
-        label: 'Отчеты по событиям',
-        defaultIcon: UserNotifyIcon,
-        warning: false,
-        url: '/admin/report/alarm',
-      },
-      {
-        name: '/admin/report/service-reports',
-        label: 'Отчеты по сервису',
-        defaultIcon: UserNotifyIcon,
-        warning: false,
-        url: '/admin/report/service-reports',
-      },
-    ]
+    // const menuReport = [
+    //   {
+    //     name: '/admin/report/gbr',
+    //     label: 'Отчеты ГБР',
+    //     defaultIcon: UserNotifyIcon,
+    //     warning: false,
+    //     url: '/admin/report/gbr',
+    //   },
+    //   {
+    //     name: '/admin/report/power',
+    //     label: 'Отчеты электропитания',
+    //     defaultIcon: UserNotifyIcon,
+    //     warning: false,
+    //     url: '/admin/report/power',
+    //   },
+    //   {
+    //     name: '/admin/report/alarm',
+    //     label: 'Отчеты по событиям',
+    //     defaultIcon: UserNotifyIcon,
+    //     warning: false,
+    //     url: '/admin/report/alarm',
+    //   },
+    //   {
+    //     name: '/admin/report/service-reports',
+    //     label: 'Отчеты по сервису',
+    //     defaultIcon: UserNotifyIcon,
+    //     warning: false,
+    //     url: '/admin/report/service-reports',
+    //   },
+    // ]
 
-    const menuSettings = [
-      {
-        name: '/admin/editingSeting/editingSeting',
-        label: 'Постановки',
-        defaultIcon: UserNotifyIcon,
-        warning: false,
-        url: '/admin/editingSeting/editingSeting',
-      },
-      {
-        name: '/admin/personalAccount/personalAccount',
-        label: 'Лицевые счета',
-        defaultIcon: UserNotifyIcon,
-        warning: false,
-        url: '/admin/personalAccount/personalAccount',
-      },
-      {
-        name: '/admin/editingAccessSeting/editingAccessSeting',
-        label: 'Удаленные постановки снятия',
-        defaultIcon: UserNotifyIcon,
-        warning: false,
-        url: '/admin/editingAccessSeting/editingAccessSeting',
-      },
-      {
-        name: '/admin/notificationType/notificationType',
-        label: 'Типы уведомлений',
-        defaultIcon: UserNotifyIcon,
-        warning: false,
-        url: '/admin/notificationType/notificationType',
-      },
-      {
-        name: '/admin/kts/kts',
-        label: 'Виртуальная КТС',
-        defaultIcon: UserNotifyIcon,
-        warning: false,
-        url: '/admin/kts/kts',
-      },
-      {
-        name: '/admin/users-aministrator/users-aministrator',
-        label: 'Администратор пользователя',
-        defaultIcon: UserNotifyIcon,
-        warning: false,
-        url: '/admin/users-aministrator/users-aministrator',
-      },
-      {
-        name: '/admin/settings-events/settings-events',
-        label: 'Экспорт событий',
-        defaultIcon: UserNotifyIcon,
-        warning: false,
-        url: '/admin/settings-events/settings-events',
-      },
-      {
-        name: '/admin/black-list/black-list',
-        label: 'Звонки не по расписанию',
-        defaultIcon: UserNotifyIcon,
-        warning: false,
-        url: '/admin/black-list/black-list',
-      },
-    ]
+    // const menuSettings = [
+    //   {
+    //     name: '/admin/editingSeting/editingSeting',
+    //     label: 'Постановки',
+    //     defaultIcon: UserNotifyIcon,
+    //     warning: false,
+    //     url: '/admin/editingSeting/editingSeting',
+    //   },
+    //   {
+    //     name: '/admin/personalAccount/personalAccount',
+    //     label: 'Лицевые счета',
+    //     defaultIcon: UserNotifyIcon,
+    //     warning: false,
+    //     url: '/admin/personalAccount/personalAccount',
+    //   },
+    //   {
+    //     name: '/admin/editingAccessSeting/editingAccessSeting',
+    //     label: 'Удаленные постановки снятия',
+    //     defaultIcon: UserNotifyIcon,
+    //     warning: false,
+    //     url: '/admin/editingAccessSeting/editingAccessSeting',
+    //   },
+    //   {
+    //     name: '/admin/notificationType/notificationType',
+    //     label: 'Типы уведомлений',
+    //     defaultIcon: UserNotifyIcon,
+    //     warning: false,
+    //     url: '/admin/notificationType/notificationType',
+    //   },
+    //   {
+    //     name: '/admin/kts/kts',
+    //     label: 'Виртуальная КТС',
+    //     defaultIcon: UserNotifyIcon,
+    //     warning: false,
+    //     url: '/admin/kts/kts',
+    //   },
+    //   {
+    //     name: '/admin/users-aministrator/users-aministrator',
+    //     label: 'Администратор пользователя',
+    //     defaultIcon: UserNotifyIcon,
+    //     warning: false,
+    //     url: '/admin/users-aministrator/users-aministrator',
+    //   },
+    //   {
+    //     name: '/admin/settings-events/settings-events',
+    //     label: 'Экспорт событий',
+    //     defaultIcon: UserNotifyIcon,
+    //     warning: false,
+    //     url: '/admin/settings-events/settings-events',
+    //   },
+    //   {
+    //     name: '/admin/black-list/black-list',
+    //     label: 'Звонки не по расписанию',
+    //     defaultIcon: UserNotifyIcon,
+    //     warning: false,
+    //     url: '/admin/black-list/black-list',
+    //   },
+    // ]
     return (
       <section className={styles.root}>
         <section className={styles.menuListWrapper}>
@@ -349,8 +349,6 @@ export const SideDrawer = React.memo(
                         <Link href='#' underline="always" className={styles.admin_side_info}>{item.email}</Link>
                       </Box>
                     </div>
-                    
-
                 ))}
               </div>
             </div>
@@ -439,7 +437,7 @@ export const SideDrawer = React.memo(
             </div>
           </section>
         </section>
-        <section className={styles.menuListWrapper}>
+        {/* <section className={styles.menuListWrapper}>
           <section className={styles.listWrapper}>
             <div className={styles.list}>
               {
@@ -566,7 +564,7 @@ export const SideDrawer = React.memo(
               }
             </div>
           </section>
-        </section>
+        </section> */}
       </section>
     )
   }

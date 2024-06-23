@@ -32,8 +32,8 @@ export class AppRoot extends React.PureComponent<IPropsAppRoot, IStateAppRoot> {
     const { hist } = this.state
     return (
       <Router>
-        {/* <Route path='/' component={Login}></Route> */}
-        <div className={styles.root}>
+        <Route path='/'  component={Login}></Route>
+        {/* <div className={styles.root}>
           <CssBaseline />
           <AppBar position="fixed" className={styles.appBar}>
             <Header />
@@ -56,7 +56,7 @@ export class AppRoot extends React.PureComponent<IPropsAppRoot, IStateAppRoot> {
               <RouterContent />
             </section>
           </section>
-        </div>
+        </div> */}
       </Router>
     )
   }

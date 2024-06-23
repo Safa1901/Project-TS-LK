@@ -11,7 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import AppStore from '@Files/AppStore.svg';
 import AppGallery from '@Files/AppGallery.svg';
-import GooglePlay from '@Files/GooglePlay.svg'
+import GooglePlay from '@Files/GooglePlay.svg';
 
 
 const useStyles = makeStyles((them: Theme) => 
@@ -23,6 +23,7 @@ const useStyles = makeStyles((them: Theme) =>
             marginTop: '20px',
             fontFamily: 'Montserrat',
             fontSize: '16px',
+            lineHeight: '19.5px'
 
         },
         
@@ -31,12 +32,13 @@ const useStyles = makeStyles((them: Theme) =>
             height: '40px',
             marginRight: '30px',
             marginLeft: '30px',
-            marginTop: '15px',
+            marginTop: '10px',
             fontFamily: 'Montserrat',
             textTransform: 'none',
             fontSize: '14px',
-            lineHeight: '19.5px'
-
+            lineHeight: '19.5px',
+            marginBottom: '20px',
+            // focusVisible: 'grey'
         },
 
         text: {
@@ -45,21 +47,22 @@ const useStyles = makeStyles((them: Theme) =>
         texteria: {
             width: '380px',
             height: '34px',
-            marginTop: '250px',
-            marginLeft: '38%',
+            marginTop: '15px',
             alignItems: 'center',
-            lineHeight: '16.8px',
+            lineHeight: '17.07px',
             fontFamily: 'Montserrat',
-            fontWeight: 'lighter',
+            fontWeight: 'inherit',
             color: '#6E757C',
             fontSize: '14px',
-            textAlign: 'center'
+            textAlign: 'center',
+            // fontWeight: '500'
         },
         mobile: {
             width: '380px',
             height: '34px',
             marginTop: '5%',
-            marginLeft: '46%',
+            display: 'flex',
+            justifyContent: 'center',
             alignItems: 'center',
             lineHeight: '16.8px',
             fontFamily: 'Montserrat',
@@ -83,9 +86,10 @@ export const Login = React.memo(({}) => {
                 <img src={LogoIcon} alt=""  className={styles.root_logo}/>
                 <div className={styles.login}>
                     <Paper elevation={0} className={styles.login_form}>
+                        
                         <TextField id="outlined-basic" label="+7(000) 000-00-00" variant="outlined" size='small' className={classes.input} />
                         <TextField id="outlined-basic" label="Пароль" variant="outlined" size='small' className={classes.input} />
-                        <Button variant="contained" className={classes.btn}>
+                        <Button variant="contained" color="primary" className={classes.btn}>
                             Войти
                         </Button>
                         <div className={styles.link}>
@@ -93,11 +97,11 @@ export const Login = React.memo(({}) => {
                                 Забыли пароль?
                             </Link>
                         </div>
-                        <div className={styles.link}>
+                        {/* <div className={styles.link}>
                             <Link href="https://ohrana-neva.ru" target="_blank" underline="always" variant="body2">
                                 Еще не являетесь клиентом?
                             </Link>
-                        </div>
+                        </div> */}
                     </Paper>
                 </div>
             </div>
